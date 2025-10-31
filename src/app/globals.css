@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Importar fuentes premium */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Variables CSS personalizadas */
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+  --font-luxury: 'Cormorant Garamond', serif;
+  
+  /* Paleta con negro principal y azules como accent */
+  --color-luxury-navy: #001960;      /* Azul marino (accent secundario) */
+  --color-luxury-dark: #001D51;      /* Azul oscuro profundo (accent) */
+  --color-luxury-blue: #4A90E2;      /* Azul claro con mejor contraste */
+  --color-luxury-slate: #131936;     /* Azul grisáceo (accent sutil) */
+  --color-luxury-light: #F8F9FC;     /* Blanco azulado (texto) */
+  
+  /* Mapeo con negro principal */
+  --color-luxury-gold: #4A90E2;      /* Azul claro como accent principal */
+  --color-luxury-silver: #131936;    /* Azul grisáceo como secundario */
+  --color-luxury-platinum: #F8F9FC;  /* Blanco azulado como highlight */
+  --color-olive-drab: #001D51;       /* Azul oscuro profundo */
+  --color-luxury-cream: #F8F9FC;     /* Blanco azulado */
+  --color-luxury-black: #000000;     /* Negro puro principal */
+  --color-luxury-white: #F8F9FC;     /* Blanco azulado */
+  --color-luxury-warm: #131936;      /* Azul grisáceo medio */
+  --color-luxury-medium: #001D51;    /* Azul oscuro medio */
+  
+  /* Sombras con negro principal */
+  --shadow-luxury: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  --shadow-luxury-lg: 0 35px 60px -12px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 30px rgba(74, 144, 226, 0.4);
+}
+
+/* Estilos base premium */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-luxury-black text-luxury-white font-sans antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+  
+  /* Scrollbar personalizado */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #4A90E2;
+    @apply rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #5BA0F2;
+  }
+  
+  /* Selección de texto */
+  ::selection {
+    background: #4A90E2;
+    color: #F8F9FC;
+  }
+}
+
+/* Componentes reutilizables */
+@layer components {
+  /* Botones premium */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3 text-sm font-medium 
+           text-luxury-white rounded-none transition-all duration-300
+           hover:shadow-glow focus:outline-none focus:ring-2 
+           focus:ring-offset-2;
+    background: #4A90E2;
+    border: 1px solid #4A90E2;
+  }
+  
+  .btn-primary:hover {
+    background: #5BA0F2;
+    border-color: #5BA0F2;
+  }
+  
+  .btn-primary:focus {
+    --tw-ring-color: #4A90E2;
+    --tw-ring-offset-color: #000000;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-3 text-sm font-medium 
+           rounded-none transition-all duration-300 focus:outline-none focus:ring-2 
+           focus:ring-offset-2;
+    border: 1px solid #4A90E2;
+    color: #4A90E2;
+    background: transparent;
+  }
+  
+  .btn-secondary:hover {
+    background: #05308C;
+    color: #F8F9FC;
+  }
+  
+  .btn-secondary:focus {
+    --tw-ring-color: #4A90E2;
+    --tw-ring-offset-color: #000000;
+  }
+  
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-6 py-2 text-sm font-medium 
+           rounded-none transition-all duration-300 focus:outline-none;
+    color: #F8F9FC;
+    background: transparent;
+  }
+  
+  .btn-ghost:hover {
+    background: rgba(74, 144, 226, 0.1);
+  }
+  
+  /* Contenedores */
+  .container-luxury {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12;
+  }
+  
+  .section-luxury {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+  
+  /* Cards premium */
+  .card-luxury {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(74, 144, 226, 0.2);
+    @apply rounded-none shadow-luxury transition-all duration-300 hover:shadow-luxury-lg;
+  }
+  
+  .card-luxury:hover {
+    border-color: rgba(74, 144, 226, 0.6);
+  }
+  
+  /* Texto luxury */
+  .text-luxury-heading {
+    @apply font-luxury text-4xl md:text-5xl lg:text-6xl font-light tracking-tight;
+    color: #F8F9FC;
+  }
+  
+  .text-luxury-subheading {
+    @apply font-serif text-2xl md:text-3xl lg:text-4xl font-normal tracking-wide;
+    color: #F8F9FC;
+  }
+  
+  .text-luxury-body {
+    @apply font-sans text-base md:text-lg leading-relaxed;
+    color: rgba(248, 249, 252, 0.8);
+  }
+  
+  /* Efectos parallax */
+  .parallax-slow {
+    transform: translateY(var(--parallax-slow, 0));
+  }
+  
+  .parallax-medium {
+    transform: translateY(var(--parallax-medium, 0));
+  }
+  
+  .parallax-fast {
+    transform: translateY(var(--parallax-fast, 0));
+  }
+  
+  /* Efectos de hover luxury */
+  .hover-lift {
+    @apply transition-all duration-500 ease-out;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-2 shadow-luxury-lg;
+  }
+  
+  /* Gradientes premium */
+  .gradient-luxury {
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(19, 25, 54, 0.05) 100%);
+  }
+  
+  .gradient-overlay {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+  }
+  
+  /* Glassmorphism con negro principal */
+  .glass-navy {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(74, 144, 226, 0.2);
+  }
+  
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(19, 25, 54, 0.3);
+  }
+  
+  .glass-blue {
+    background: rgba(5, 48, 140, 0.2);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(74, 144, 226, 0.4);
+  }
+}
+
+/* Utilidades premium */
+@layer utilities {
+  /* Animaciones */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+  
+  /* Estados de loading */
+  .loading-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(74, 144, 226, 0.2), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  /* Efectos de brillo azul */
+  .glow-blue {
+    box-shadow: 0 0 30px rgba(74, 144, 226, 0.3);
+  }
+  
+  .glow-blue-strong {
+    box-shadow: 0 0 50px rgba(74, 144, 226, 0.5);
+  }
+}
+
+/* Keyframes personalizados */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Media queries premium */
+@media (max-width: 768px) {
+  .text-luxury-heading {
+    @apply text-3xl md:text-4xl;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "Header": {
+    "navigation": {
+      "mountain": "MOUNTAIN",
+      "gravel": "GRAVEL",
+      "road": "ROAD",
+      "gearup": "GEAR UP",
+      "eiros": "EIROS"
+    },
+    "actions": {
+      "search": "Buscar",
+      "cart": "Carrito",
+      "user": "Usuario"
+    },
+    "language": {
+      "label": "Idioma"
+    }
+  },
+  "Home": {
+    "hero": {
+      "title": "FORGED BY THE GODS",
+      "description": "Eiros fabrica piezas de fibra de carbono para los amantes de la bicicleta. Utilizamos tecnología de autoclave para lograr una mayor resistencia con un peso mínimo. Todas están diseñadas y fabricadas en Barcelona por profesionales de los materiales compuestos.",
+      "description2": "Ya sea para vestir con elegancia tu bicicleta o para alcanzar el máximo rendimiento, aquí encontrarás una gama de obras de arte, inspiradas en el Mediterráneo."
+    },
+    "features": {
+      "lightWeight": "LIGHT WEIGHT",
+      "asymmetricalLaminates": "ASYMETRICAL LAMINATES",
+      "autoClave": "AUTO CLAVE",
+      "impactResist": "IMPACT RESIST",
+      "impactFlex": "IMPACT FLEX",
+      "antiVibration": "ANTI VIBRATION"
+    },
+    "sculpedMotion": {
+      "title": "SCULPED MOTION",
+      "description": "Eiros fabrica con todo el rigor y la profesionalidad de técnicos especializados con más de 20 años de experiencia en el sector de los composites. Manillares, tijas y platos para bicicletas.",
+      "paragraph1": "Los manillares de fibra de carbono ofrecen una reducción de peso significativa en comparación con los manillares de aluminio tradicionales, lo que supone un ahorro para el ciclista de entre 100 y 150 gramos. Este ahorro de peso puede parecer mínimo, pero marca una diferencia notable en el manejo, la aceleración y la calidad general de la conducción.",
+      "paragraph2": "En el ciclismo, el manillar es una de las partes más importantes de la bicicleta. Es responsable de la dirección y el control de la bicicleta, lo que lo hace crucial para una experiencia de conducción cómoda y placentera.",
+      "ctaButton": "VER MOUNTAIN"
+    },
+    "techniques": {
+      "title": "OUR UNIQUE TECHNIQUES"
+    },
+    "contact": {
+      "title": "EIROS CONTIGO",
+      "subtitle": "JUNTOS EN LAS REDES",
+      "followText": "Pedalea con nosotros"
+    }
+  },
+  "Mountain": {
+    "product": {
+      "potencyType": "Tipo de Potencia",
+      "extraLight": "Extra light",
+      "buy": "COMPRAR",
+      "stock": "stock",
+      "specifications": {
+        "title": "ESPECIFICACIONES TECNICAS:",
+        "width": "Width",
+        "rise": "Rise",
+        "backsweep": "Backsweep",
+        "upsweep": "Upsweep",
+        "clampDiameter": "Clamp Diameter"
+      },
+      "construction": "Construction"
+    },
+    "products": {
+      "atena": {
+        "subtitle": "FEEL THE ANCESTORS",
+        "material": "carbono",
+        "description": "Manillar de fibra de carbono para bicicletas de montaña modelo Atena. Acabado carbono. Un manillar con un peso de tan solo 287 gr. y resistente al máximo gracias a la construcción de lamine de carbono asimétricas y su proceso autoclave. Manillar de fibra de carbono para bicicletas de montaña modelo Atena. Acabado carbono. Un manillar con un peso de tan solo 287 gr. y resistente al máximo gracias a la construMarillar de fibra de carbono para bicicletas de montaña modelo Atena. Acabado carbono. Un manillar con un peso de tan solo 287 gr.",
+        "construction": "Hephaestus-V Core Monocoque",
+        "features": [
+          "Autoclave Forjado: Para máxima resistencia al peso y perfección de resina.",
+          "Certificado y Probado: Supera todos los estándares de prueba de bicicletas de montaña EFBE e ISO para seguridad y durabilidad."
+        ]
+      },
+      "minotaur": {
+        "subtitle": "LIBERA LA BESTIA",
+        "material": "fibra de carbono",
+        "description": "Manillar de fibra de carbono diseñado para los riders más exigentes. El Minotaur combina robustez y ligereza con un peso de 315 gr. Construcción monocoque con capas de carbono entrecruzadas para máxima resistencia a impactos. Perfecto para enduro y trail agresivo. Acabado mate premium con logo grabado láser.",
+        "construction": "Tecnología UD Carbon LayUp",
+        "features": [
+          "Resistente a Impactos: Tejido de carbono de triple capa para una resistencia superior.",
+          "Pruebas de Nivel Profesional: Probado más allá de los estándares UCI para condiciones de conducción extremas.",
+          "Amortiguación de Vibraciones: Matriz de resina avanzada reduce el ruido del camino."
+        ]
+      }
+    }
+  },
+  "Gravel": {
+    "hero": {
+      "title": "GRAVEL SOON",
+      "description": "Los manillares para gravel Eiros se fabrican a mano en Barcelona mediante un largo proceso que empieza por un diseño perfecto, un proceso de fabricación exquisito y con unas pruebas de fatiga muy duras. Estamos trabajando en estos manillares ahora mismo. En breve tendremos noticias que daros."
+    }
+  },
+  "Road": {
+    "hero": {
+      "title": "ROAD SOON",
+      "description": "Los manillares para road Eiros se fabrican a mano en Barcelona mediante un largo proceso que empieza por un diseño perfecto, un proceso de fabricación exquisito y con unas pruebas de fatiga muy duras. Estamos trabajando en estos manillares ahora mismo. En breve tendremos noticias que daros."
+    }
+  },
+  "About": {
+     "hero": {
+      "title": "DÓNDE NACEN NUEVAS",
+      "title2": "LEYENDAS"
+    },
+    "content": {
+      "parragraph1": "El deporte ha sido símbolo de superación y crecimiento desde la antigua Grecia, cuando los dioses forjaban destinos y los héroes navegaban por el Mediterráneo compartiendo rutas y conocimientos. Este espíritu inspira a EIROS, donde entendemos el ciclismo como una experiencia que va más allá de pedalear: es pasión, movimiento y futuro.",
+      "parragraph2": "De este Mediterráneo de leyendas nacemos nosotros... De Barcelona y su capacidad para transformar la creatividad en diseño funcional, como el trencadís de Gaudí, hecho de fragmentos singulares que juntos se convierten en arte e ingenio, metáfora de nuestro proceso: láminas de fibra de carbono dispuestas con precisión, que unidas crean componentes de alta resistencia, ligereza y belleza funcional. Y también nacemos de la voz industrial del Vallès, que ha sabido reinventarse continuamente convirtiéndose en motor de avance mediante la tecnología y la innovación.",
+      "parragraph3": "Esta doble herencia, el arte que se hace ingeniería y la industria que se hace arte, es nuestro fundamento. En EIROS, damos continuidad a este legado con nuestra experiencia en fibra de carbono de alta calidad. Creamos componentes que unen la ligereza y la precisión, para que cada trayecto sea una experiencia única, llena de confort, elegancia y satisfacción.",
+      "subtitle": "EIROS Y TÚ",
+      "subtitle2": "Juntos, nacen nuevas leyendas"
+    },
+    "sculpedMotion": {
+      "title": "MOVIMENT ESCULPIT",
+      "description": "Eiros fabrica amb tot el rigor i la professionalitat de tècnics especialitzats amb més de 20 anys d'experiència en el sector dels composites. Manillars, tiges i plats per a bicicletes.",
+      "paragraph1": "Els manillars de fibra de carboni ofereixen una reducció de pes significativa en comparació amb les barres d'alumini tradicionals, estalviant als ciclistes entre 100 i 150 grams. Aquest estalvi de pes pot semblar mínim, però pot fer una diferència notable en el maneig, l'acceleració i la qualitat general de la conducció.",
+      "paragraph2": "Quan es tracta de ciclisme, els manillars són una de les parts més importants d'una bicicleta. Són responsables de dirigir i controlar la bicicleta, cosa que els fa crucials per a una conducció còmoda i agradable.",
+      "ctaButton": "VEURE MOUNTAIN"
+    },
+    "techniques": {
+      "title": "LES NOSTRES TÈCNIQUES ÚNIQUES"
+    },
+    "contact": {
+      "title": "EIROS AMB TU",
+      "subtitle": "JUNTS A LES XAXES",
+      "followText": "Pedala amb nosaltres"
+    }
+  },
+  "GearUp": {
+    "hero": {
+      "title": "GEAR UP",
+      "description": "Els manillars de road Eiros es fabriquen a mà a Barcelona mitjançant un llarg procés que comença amb un disseny perfecte, un procés de fabricació exquisit i unes proves de fatiga molt dures. Estem treballant en aquests manills ara mateix. Aviat tindrem novetats per compartir."
+    },
+    "categories": {
+      "clothing": "ROBA",
+      "accessories": "ACCESSORIS",
+      "equipment": "EQUIPAMENT"
+    },
+    "contact": {
+      "title": "EIROS AMB TU",
+      "subtitle": "JUNTS A LES XAXES",
+      "followText": "Pedala amb nosaltres"
+    }
+  },
+  "Submit": {
+    "title": "Solicitar Pedido",
+    "success": {
+      "title": "¡Pedido enviado!",
+      "message": "Nos pondremos en contacto contigo pronto"
+    },
+    "error": {
+      "generic": "Error al enviar pedido",
+      "connection": "Error de conexión. Por favor, inténtalo de nuevo"
+    },
+    "productDetails": {
+      "color": "Color",
+      "potency": "Potencia",
+      "weight": "Peso"
+    },
+    "form": {
+      "fullName": "Nombre completo",
+      "email": "Email",
+      "phone": "Teléfono (opcional)",
+      "country": "País",
+      "city": "Ciudad",
+      "message": "Mensaje adicional (opcional)"
+    },
+    "buttons": {
+      "submit": "Enviar Pedido",
+      "sending": "Enviando..."
+    }
+  },
+  "Footer": {
+    "customerService": {
+      "title": "ATENCIÓN AL CLIENTE",
+      "email": "info@eirosbcn.com",
+      "phone": "+34 600 600 600",
+      "warranty": "Garantía",
+      "returns": "Devoluciones"
+    },
+    "social": {
+      "tagline": "Pedala con nosotros",
+      "newsletterPlaceholder": "escribe aquí tu email y recibe noticias"
+    },
+    "moreInfo": {
+      "title": "MÁS INFORMACIÓN",
+      "sitemap": "Mapa web",
+      "faq": "Preguntas Frecuentes",
+      "stores": "Puntos de venta Autorizados",
+      "manuals": "Manuales de producto"
+    },
+    "legal": {
+      "privacy": "Política de privacidad",
+      "refund": "Política de reembolso",
+      "terms": "Condiciones del servicio",
+      "shipping": "Política de envío",
+      "legal": "Aviso legal",
+      "company": "Información Empresa"
+    }
+  }
+}

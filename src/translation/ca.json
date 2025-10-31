@@ -1,0 +1,201 @@
+{
+  "Header": {
+    "navigation": {
+      "mountain": "MOUNTAIN",
+      "gravel": "GRAVEL",
+      "road": "ROAD",
+      "gearup": "GEAR UP",
+      "eiros": "EIROS"
+    },
+    "actions": {
+      "search": "Cercar",
+      "cart": "Cistell",
+      "user": "Usuari"
+    },
+    "language": {
+      "label": "Idioma"
+    }
+  },
+  "Home": {
+    "hero": {
+      "title": "FORGED BY THE GODS",
+      "description": "Eiros fabrica peces de fibra de carboni per als amants de la bicicleta. Utilitzem tecnologia d'autoclau per assolir una major resistència amb un pes mínim. Totes estan dissenyades i fabricades a Barcelona per professionals dels materials compostos.",
+      "description2": "Ja sigui per vestir amb elegància la teva bicicleta o per assolir el màxim rendiment, aquí trobaràs una gamma d'obres d'art, inspirades en la Mediterrània."
+    },
+    "features": {
+      "lightWeight": "LIGHT WEIGHT",
+      "asymmetricalLaminates": "ASYMETRICAL LAMINATES",
+      "autoClave": "AUTO CLAVE",
+      "impactResist": "IMPACT RESIST",
+      "impactFlex": "IMPACT FLEX",
+      "antiVibration": "ANTI VIBRATION"
+    },
+    "sculpedMotion": {
+      "title": "SCULPED MOTION",
+      "description": "Eiros fabrica amb tot el rigor i la professionalitat de tècnic especialitzats amb més de 20 anys d’experiència en el sector dels materials compostos. Manillars, tiges i plats per bicicletes.",
+      "paragraph1": "Els manillars de fibra de carboni ofereixen una reducció de pes significativa en comparació amb els manillars d'alumini tradicionals, cosa que suposa un estalvi per al ciclista d'entre 100 i 150 grams. Aquest estalvi de pes pot semblar mínim, però marca una diferència notable en el maneig, l'acceleració i la qualitat general de la conducció.",
+      "paragraph2": "En el ciclisme, el manillar és una de les parts més importants de la bicicleta. És responsable de la direcció i el control de la bicicleta, cosa que el fa crucial per a una experiència de conducció còmoda i plaent.",
+      "ctaButton": "VEURE MOUNTAIN"
+    },
+    "techniques": {
+      "title": "LES NOSTRES TÈCNIQUES ÚNIQUES"
+    },
+    "contact": {
+      "title": "EIROS AMB TU",
+      "subtitle": "JUNTS A LES XAXES",
+      "followText": "Pedala amb nosaltres"
+    }
+  },
+  "Mountain": {
+    "product": {
+      "potencyType": "Tipus de Potència",
+      "extraLight": "Extra lleuger",
+      "buy": "COMPRAR",
+      "stock": "stock",
+      "specifications": {
+        "title": "ESPECIFICACIONS TÈCNIQUES:",
+        "width": "Amplada",
+        "rise": "Alçada",
+        "backsweep": "Angle posterior",
+        "upsweep": "Angle superior",
+        "clampDiameter": "Diàmetre abraçadora"
+      },
+      "construction": "Construcció"
+    },
+    "products": {
+      "atena": {
+        "subtitle": "SENT ELS AVANTPASSATS",
+        "material": "carboni",
+        "description": "Manillar de fibra de carboni per a bicicletes de muntanya model Atena. Acabat carboni. Un manillar amb un pes de només 287 gr. i resistent al màxim gràcies a la construcció de làmines de carboni asimètriques i el seu procés d'autoclau. Perfecte per a riders exigents que busquen l'equilibri perfecte entre lleugeresa i resistència.",
+        "construction": "Hephaestus-V Core Monocoque",
+        "features": [
+          "Forjat en Autoclau: Per a màxima resistència-pes i perfecció de resina.",
+          "Certificat i Provat: Supera tots els estàndards de prova EFBE i ISO per a bicicletes de muntanya en seguretat i durabilitat."
+        ]
+      },
+      "minotaur": {
+        "subtitle": "ALLIBERA LA BÈSTIA",
+        "material": "fibra de carboni",
+        "description": "Manillar de fibra de carboni dissenyat per als riders més exigents. El Minotaur combina robustesa i lleugeresa amb un pes de 315 gr. Construcció monocasc amb capes de carboni entrecreuades per a màxima resistència a impactes. Perfecte per a enduro i trail agressiu. Acabat mat premium amb logo gravat làser.",
+        "construction": "Tecnologia UD Carbon LayUp",
+        "features": [
+          "Resistent a Impactes: Teixit de carboni de triple capa per a resistència superior.",
+          "Proves de Nivell Professional: Provat més enllà dels estàndards UCI per a condicions extremes de conducció.",
+          "Amortiment de Vibracions: Matriu de resina avançada redueix la vibració del terreny."
+        ]
+      }
+    }
+  },
+  "Gravel": {
+    "hero": {
+      "title": "GRAVEL SOON",
+      "description": "Els manillars de gravel Eiros es fabriquen a mà a Barcelona mitjançant un llarg procés que comença amb un disseny perfecte, un procés de fabricació exquisit i unes proves de fatiga molt dures. Estem treballant en aquests manills ara mateix. Aviat tindrem novetats per compartir."
+    }
+  },
+  "Road": {
+    "hero": {
+      "title": "ROAD SOON",
+      "description": "Els manillars de road Eiros es fabriquen a mà a Barcelona mitjançant un llarg procés que comença amb un disseny perfecte, un procés de fabricació exquisit i unes proves de fatiga molt dures. Estem treballant en aquests manills ara mateix. Aviat tindrem novetats per compartir."
+    }
+  },
+  "About": {
+    "hero": {
+      "title": "ON NEIXEN NOVES",
+      "title2": "LLEGENDES"
+    },
+    "content": {
+      "parragraph1": "L'esport ha estat símbol de superació i creixement ja des de l'antiga Grècia, quan els déus forjaven destins i els herois navegaven pel Mediterrani compartint rutes i coneixements. Aquest esperit inspira a EIROS, on entenem el ciclisme com una experiència que va més enllà de pedalar: és passió, moviment i futur.",
+      "parragraph2": "D'aquesta Mediterrània de llegendes naixem nosaltres... De Barcelona i la seva capacitat per transformar la creativitat en disseny funcional, com el trencadís de Gaudí, fet de fragments singulars que junts esdevenen art i enginy, metàfora del nostre procés: làmines de fibra de carboni disposades amb precisió, que unides creen components d'alta resistència, lleugeresa i bellesa funcional. I també naixem de la veu industrial del Vallès, que ha sabut reinventar-se contínuament convertint-se en motor d'avanç mitjançant la tecnologia i la innovació.",
+      "parragraph3": "Aquesta doble herència, l'art que es fa enginyeria i la indústria que es fa art, és el nostre fonament. A EIROS, donem continuïtat a aquest llegat amb la nostra expertesa en fibra de carboni d'alta qualitat. Creem components que uneixen la lleugeresa i la precisió, perquè cada trajecte sigui una experiència única, plena de confort, elegància i satisfacció.",
+      "subtitle": "EIROS I TU",
+      "subtitle2": "Junts, neixen noves llegendes"
+    },
+    "sculpedMotion": {
+      "title": "MOVIMENT ESCULPIT",
+      "description": "Eiros fabrica amb tot el rigor i la professionalitat de tècnics especialitzats amb més de 20 anys d'experiència en el sector dels composites. Manillars, tiges i plats per a bicicletes.",
+      "paragraph1": "Els manillars de fibra de carboni ofereixen una reducció de pes significativa en comparació amb les barres d'alumini tradicionals, estalviant als ciclistes entre 100 i 150 grams. Aquest estalvi de pes pot semblar mínim, però pot fer una diferència notable en el maneig, l'acceleració i la qualitat general de la conducció.",
+      "paragraph2": "Quan es tracta de ciclisme, els manillars són una de les parts més importants d'una bicicleta. Són responsables de dirigir i controlar la bicicleta, cosa que els fa crucials per a una conducció còmoda i agradable.",
+      "ctaButton": "VEURE MOUNTAIN"
+    },
+    "techniques": {
+      "title": "LES NOSTRES TÈCNIQUES ÚNIQUES"
+    },
+    "contact": {
+      "title": "EIROS AMB TU",
+      "subtitle": "JUNTS A LES XAXES",
+      "followText": "Pedala amb nosaltres"
+    }
+  },
+  "GearUp": {
+    "hero": {
+      "title": "GEAR UP",
+      "description": "Els manillars de road Eiros es fabriquen a mà a Barcelona mitjançant un llarg procés que comença amb un disseny perfecte, un procés de fabricació exquisit i unes proves de fatiga molt dures. Estem treballant en aquests manills ara mateix. Aviat tindrem novetats per compartir."
+    },
+    "categories": {
+      "clothing": "ROBA",
+      "accessories": "ACCESSORIS",
+      "equipment": "EQUIPAMENT"
+    },
+    "contact": {
+      "title": "EIROS AMB TU",
+      "subtitle": "JUNTS A LES XAXES",
+      "followText": "Pedala amb nosaltres"
+    }
+  },
+  "Submit": {
+    "title": "Sol·licitar Comanda",
+    "success": {
+      "title": "Comanda enviada!",
+      "message": "Ens posarem en contacte amb tu aviat"
+    },
+    "error": {
+      "generic": "Error en enviar la comanda",
+      "connection": "Error de connexió. Si us plau, torna-ho a intentar"
+    },
+    "productDetails": {
+      "color": "Color",
+      "potency": "Potència",
+      "weight": "Pes"
+    },
+    "form": {
+      "fullName": "Nom complet",
+      "email": "Email",
+      "phone": "Telèfon (opcional)",
+      "country": "País",
+      "city": "Ciutat",
+      "message": "Missatge addicional (opcional)"
+    },
+    "buttons": {
+      "submit": "Enviar Comanda",
+      "sending": "Enviant..."
+    }
+  },
+  "Footer": {
+    "customerService": {
+      "title": "ATENCIÓ AL CLIENT",
+      "email": "info@eirosbcn.com",
+      "phone": "+34 600 600 600",
+      "warranty": "Garantia",
+      "returns": "Devolucions"
+    },
+    "social": {
+      "tagline": "Pedala amb nosaltres",
+      "newsletterPlaceholder": "escriu aquí el teu email i rep notícies"
+    },
+    "moreInfo": {
+      "title": "MÉS INFORMACIÓ",
+      "sitemap": "Mapa web",
+      "faq": "Preguntes Freqüents",
+      "stores": "Punts de venda Autoritzats",
+      "manuals": "Manuals de producte"
+    },
+    "legal": {
+      "privacy": "Política de privacitat",
+      "refund": "Política de reemborsament",
+      "terms": "Condicions del servei",
+      "shipping": "Política d'enviament",
+      "legal": "Avís legal",
+      "company": "Informació Empresa"
+    }
+  }
+}

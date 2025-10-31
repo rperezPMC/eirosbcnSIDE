@@ -1,0 +1,201 @@
+{
+  "Header": {
+    "navigation": {
+      "mountain": "MOUNTAIN",
+      "gravel": "GRAVEL",
+      "road": "ROAD",
+      "gearup": "GEAR UP",
+      "eiros": "EIROS"
+    },
+    "actions": {
+      "search": "Search",
+      "cart": "Cart",
+      "user": "User"
+    },
+    "language": {
+      "label": "Language"
+    }
+  },
+  "Home": {
+    "hero": {
+      "title": "FORGED BY THE GODS",
+      "description": "Eiros makes carbon fiber parts for bicycle lovers. We use autoclave technology for greater strength with minimal weight. They are all designed and made in Barcelona by composite professionals.",
+      "description2": "Whether to dress your bike with elegance or to achieve the best performance, here you will find a range of works of art, inspired by the Mediterranean."
+    },
+    "features": {
+      "lightWeight": "LIGHT WEIGHT",
+      "asymmetricalLaminates": "ASYMMETRICAL LAMINATES",
+      "autoClave": "AUTO CLAVE",
+      "impactResist": "IMPACT RESIST",
+      "impactFlex": "IMPACT FLEX",
+      "antiVibration": "ANTI VIBRATION"
+    },
+    "sculpedMotion": {
+      "title": "SCULPTED MOTION",
+      "description": "Eiros manufactures with the utmost rigor and professionalism of specialized technicians with more than 20 years of experience in the composites sector. Handlebars, seat posts, and chainrings for bicycles.",
+      "paragraph1": "Carbon fiber handlebars offer a significant weight reduction compared to traditional aluminum bars, typically saving riders between 100 to 150 grams. This weight savings may seem minimal, but it can make a noticeable difference in handling, acceleration, and overall ride quality.",
+      "paragraph2": "When it comes to cycling, the handlebars are one of the most important parts of a bike. They are responsible for steering and controlling the bike, which makes them crucial for a comfortable and enjoyable ride.",
+      "ctaButton": "VIEW MOUNTAIN"
+    },
+    "techniques": {
+      "title": "OUR UNIQUE TECHNIQUES"
+    },
+    "contact": {
+      "title": "EIROS WITH YOU",
+      "subtitle": "JOIN THE RIDE",
+      "followText": "Pedal with us"
+    }
+  },
+  "Mountain": {
+    "product": {
+      "potencyType": "Stem Type",
+      "extraLight": "Extra light",
+      "buy": "BUY",
+      "stock": "in stock",
+      "specifications": {
+        "title": "TECHNICAL SPECIFICATIONS:",
+        "width": "Width",
+        "rise": "Rise",
+        "backsweep": "Backsweep",
+        "upsweep": "Upsweep",
+        "clampDiameter": "Clamp Diameter"
+      },
+      "construction": "Construction"
+    },
+    "products": {
+      "atena": {
+        "subtitle": "FEEL THE ANCESTORS",
+        "material": "carbon",
+        "description": "Carbon fiber handlebar for mountain bikes, Atena model. Carbon finish. A handlebar weighing only 287 gr. and extremely resistant thanks to the construction of asymmetric carbon laminate and its autoclave process. Perfect for demanding riders seeking the perfect balance between lightness and strength.",
+        "construction": "Hephaestus-V Core Monocoque",
+        "features": [
+          "Autoclave Forged: For maximum strength-to-weight and resin perfection.",
+          "Certified & Tested: Exceeds all EFBE and ISO mountain bike testing standards for safety and durability."
+        ]
+      },
+      "minotaur": {
+        "subtitle": "UNLEASH THE BEAST",
+        "material": "carbon fiber",
+        "description": "Carbon fiber handlebar designed for the most demanding riders. The Minotaur combines robustness and lightness with a weight of 315 gr. Monocoque construction with interwoven carbon layers for maximum impact resistance. Perfect for enduro and aggressive trail. Premium matte finish with laser-etched logo.",
+        "construction": "UD Carbon LayUp Technology",
+        "features": [
+          "Impact Resistant: Triple-layer carbon weave for superior strength.",
+          "Pro-Level Testing: Tested beyond UCI standards for extreme riding conditions.",
+          "Vibration Damping: Advanced resin matrix reduces trail chatter."
+        ]
+      }
+    }
+  },
+  "Gravel": {
+    "hero": {
+      "title": "GRAVEL SOON",
+      "description": "Eiros gravel handlebars are handcrafted in Barcelona through a lengthy process that begins with a perfect design, an exquisite manufacturing process, and rigorous fatigue testing. We are working on these handlebars right now. Soon, we will have news to share with you."
+    }
+  },
+  "Road": {
+    "hero": {
+      "title": "ROAD SOON",
+      "description": "Eiros road handlebars are handcrafted in Barcelona through a lengthy process that begins with a perfect design, an exquisite manufacturing process, and rigorous fatigue testing. We are working on these handlebars right now. Soon, we will have news to share with you."
+    }
+  },
+  "About": {
+     "hero": {
+      "title": "WHERE NEW LEGENDS",
+      "title2": "ARE BORN"
+    },
+    "content": {
+      "parragraph1": "Sport has been a symbol of overcoming and growth since ancient Greece, when gods forged destinies and heroes sailed the Mediterranean sharing routes and knowledge. This spirit inspires EIROS, where we understand cycling as an experience that goes beyond pedaling: it's passion, movement, and future.",
+      "parragraph2": "From this Mediterranean of legends we are born... From Barcelona and its ability to transform creativity into functional design, like Gaudí's trencadís, made of unique fragments that together become art and ingenuity, metaphor of our process: layers of carbon fiber arranged with precision, which united create components of high strength, lightness, and functional beauty. And we are also born from the industrial voice of Vallès, which has known how to continually reinvent itself, becoming an engine of progress through technology and innovation.",
+      "parragraph3": "This dual heritage, the art that becomes engineering and the industry that becomes art, is our foundation. At EIROS, we continue this legacy with our expertise in high-quality carbon fiber. We create components that unite lightness and precision, so that every journey is a unique experience, full of comfort, elegance, and satisfaction.",
+      "subtitle": "EIROS AND YOU",
+      "subtitle2": "Together, new legends are born"
+    },
+    "sculpedMotion": {
+      "title": "MOVIMENT ESCULPIT",
+      "description": "Eiros fabrica amb tot el rigor i la professionalitat de tècnics especialitzats amb més de 20 anys d'experiència en el sector dels composites. Manillars, tiges i plats per a bicicletes.",
+      "paragraph1": "Els manillars de fibra de carboni ofereixen una reducció de pes significativa en comparació amb les barres d'alumini tradicionals, estalviant als ciclistes entre 100 i 150 grams. Aquest estalvi de pes pot semblar mínim, però pot fer una diferència notable en el maneig, l'acceleració i la qualitat general de la conducció.",
+      "paragraph2": "Quan es tracta de ciclisme, els manillars són una de les parts més importants d'una bicicleta. Són responsables de dirigir i controlar la bicicleta, cosa que els fa crucials per a una conducció còmoda i agradable.",
+      "ctaButton": "VEURE MOUNTAIN"
+    },
+    "techniques": {
+      "title": "LES NOSTRES TÈCNIQUES ÚNIQUES"
+    },
+    "contact": {
+      "title": "EIROS AMB TU",
+      "subtitle": "JUNTS A LES XAXES",
+      "followText": "Pedala amb nosaltres"
+    }
+  },
+  "GearUp": {
+    "hero": {
+      "title": "GEAR UP",
+      "description": "Els manillars de road Eiros es fabriquen a mà a Barcelona mitjançant un llarg procés que comença amb un disseny perfecte, un procés de fabricació exquisit i unes proves de fatiga molt dures. Estem treballant en aquests manills ara mateix. Aviat tindrem novetats per compartir."
+    },
+    "categories": {
+      "clothing": "ROBA",
+      "accessories": "ACCESSORIS",
+      "equipment": "EQUIPAMENT"
+    },
+    "contact": {
+      "title": "EIROS AMB TU",
+      "subtitle": "JUNTS A LES XAXES",
+      "followText": "Pedala amb nosaltres"
+    }
+  },
+  "Submit": {
+    "title": "Request Order",
+    "success": {
+      "title": "Order submitted!",
+      "message": "We will contact you soon"
+    },
+    "error": {
+      "generic": "Error submitting order",
+      "connection": "Connection error. Please try again"
+    },
+    "productDetails": {
+      "color": "Color",
+      "potency": "Stem",
+      "weight": "Weight"
+    },
+    "form": {
+      "fullName": "Full name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "country": "Country",
+      "city": "City",
+      "message": "Additional message (optional)"
+    },
+    "buttons": {
+      "submit": "Submit Order",
+      "sending": "Sending..."
+    }
+  },
+  "Footer": {
+    "customerService": {
+      "title": "CUSTOMER SERVICE",
+      "email": "info@eirosbcn.com",
+      "phone": "+34 600 600 600",
+      "warranty": "Warranty",
+      "returns": "Returns"
+    },
+    "social": {
+      "tagline": "Ride with us",
+      "newsletterPlaceholder": "enter your email here and receive news"
+    },
+    "moreInfo": {
+      "title": "MORE INFORMATION",
+      "sitemap": "Sitemap",
+      "faq": "Frequently Asked Questions",
+      "stores": "Authorized Retailers",
+      "manuals": "Product Manuals"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "refund": "Refund Policy",
+      "terms": "Terms of Service",
+      "shipping": "Shipping Policy",
+      "legal": "Legal Notice",
+      "company": "Company Information"
+    }
+  }
+}
