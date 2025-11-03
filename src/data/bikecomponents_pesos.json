@@ -2,8 +2,8 @@
   {
     "Id": 3,
     "ProductoId": 3,
-    "Peso": 230,
-    "Stock": 50,
+    "Peso": 0,
+    "Stock": 0,
     "Disponible": true,
     "EsPrincipal": true,
     "Orden": 1,
