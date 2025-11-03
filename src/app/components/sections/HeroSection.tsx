@@ -17,6 +17,7 @@ export default function HeroSection() {
   
   const [showIntroText, setShowIntroText] = useState(true)
   const { setShowGlobalFooter } = useFooter()
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setShowGlobalFooter(false)
@@ -31,6 +32,17 @@ export default function HeroSection() {
     }, 2500)
     return () => clearTimeout(timer)
   }, [])
+
+
+   useEffect(() => {
+    // Detecta el ancho de pantalla
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+
+    // Escucha cambios de tamaño
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
   return (
     <>
@@ -289,11 +301,18 @@ export default function HeroSection() {
 
           <div className="w-full px-3 md:px-6 flex flex-col items-center justify-center gap-6 md:gap-10 rounded-[20px]">        
             {/* Video */}
-            <motion.div 
+            <motion.div
               className="w-full max-w-[860px] aspect-[4/6] md:aspect-video rounded-[12px] md:rounded-[20px] overflow-hidden"
             >
               <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-                <source src="/videos/home/video_mountain_cta.mp4" type="video/mp4" />
+                <source
+                  src={
+                    isMobile
+                      ? "/videos/home/video_mountain_cta_mobile.mp4"
+                      : "/videos/home/video_mountain_cta.mp4"
+                  }
+                  type="video/mp4"
+                />
               </video>
             </motion.div>
 

@@ -71,7 +71,7 @@ export default function EirosPage() {
         </h2>
 
         {/* Descripción */}
-        <div className="px-8 justify-content md:w-[55%] md:justify-center md:mt-10" style={{ fontFamily: 'Montserrat', fontSize: '16px', lineHeight: '26px', color: '#f9f9f9' }}>
+        <div className="px-8 justify-content text-justify md:w-[55%] md:justify-center md:mt-10" style={{ fontFamily: 'Montserrat', fontSize: '16px', lineHeight: '26px', color: '#f9f9f9' }}>
           <p className="mb-4">
             {t('content.parragraph1')}
           </p>
@@ -88,7 +88,7 @@ export default function EirosPage() {
           >
             <div
               className={`w-[85%] rounded-[20px] overflow-hidden relative ${
-                isMobile ? 'aspect-[6/9]' : ''
+                isMobile ? 'aspect-[7/10]' : ''
               }`}
               style={!isMobile ? { aspectRatio: '17/6' } : undefined}
             >
@@ -97,7 +97,7 @@ export default function EirosPage() {
                 <img
                   src="/images/about/inspired_about_mobile.png"
                   alt="Inspired About Mobile"
-                  className="w-full h-full object-cover absolute top-0 left-0"
+                  className="w-full h-[full] object-cover absolute top-0 left-0"
                 />
               ) : (
                 <>
@@ -130,7 +130,7 @@ export default function EirosPage() {
       >
         {/* Párrafos iniciales */}
         <div
-          className="w-full md:w-[55%] px-8 md:px-0 text-left md:text-center mt-4 md:mt-10"
+          className="w-full md:w-[55%] px-8 text-justify md:px-0 text-left md:text-center mt-4 md:mt-10"
           style={{
             fontFamily: 'Montserrat',
             fontSize: '16px',
@@ -142,7 +142,7 @@ export default function EirosPage() {
         </div>
 
         <div
-          className="w-full md:w-[55%] px-8 md:px-0 text-left md:text-center mt-6"
+          className="w-full md:w-[55%] px-8 text-justify md:px-0 text-left md:text-center mt-6"
           style={{
             fontFamily: 'Montserrat',
             fontSize: '16px',

@@ -1,9 +1,20 @@
-import { motion } from 'framer-motion'
+'use client'
+
 import { useTranslations, useLocale } from 'next-intl'
+import { useEffect, useState } from 'react'
+
 
 
 export default function GravelPage() {
   const t = useTranslations('Gravel')
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   return (
     <div className="w-full bg-luxury-black">
@@ -30,21 +41,25 @@ export default function GravelPage() {
         </div>
       </section>
 
-      {/* Imagen inferior también más cerca */}
       <section className="w-full bg-luxury-black flex items-center justify-center py-0 -mt-3">
-        <div className="w-full h-[240px] md:h-[426px] rounded-[16px] overflow-hidden">
+        <div className="w-[800px] h-[210px] md:h-[426px] rounded-[16px] overflow-hidden">
           <img
-            src="/images/gravel/coming_soon_gravel.png"
+            src={
+              isMobile
+                ? "/images/gravel/coming_soon_gravel_mobile.png"
+                : "/images/gravel/coming_soon_gravel.png"
+            }
             alt="Gravel coming soon"
-            className="w-full h-full object-contain bg-black"
+            className="w-full h-full object-cover bg-black" // 👈 cambia object-contain por object-cover
           />
         </div>
       </section>
 
+
       {/* FORGED BY GODS */}
       <section id="forged_by_gods" className="w-full flex flex-col items-center md:justify-center bg-luxury-black px-6 pb-16 -mt-2">
         <div
-          className="max-w-4xl  justify-content md:text-center"
+          className="max-w-4xl text-justify justify-content md:text-center"
           style={{ fontFamily: 'Montserrat', fontSize: '16px', lineHeight: '26px', color: '#f9f9f9' }}
         >
           <p className="mb-4 md:mb-4">

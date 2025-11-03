@@ -102,7 +102,7 @@ export default function MountainProductCard({ product }: MountainProductCardProp
   return (
     <div className="w-full bg-black text-white py-16">
       {/* Logo y Nombre */}
-      <div className="flex flex-col items-center gap-3 mb-12">
+      <div className="flex flex-col items-center gap-3">
         {/* Nuevo SVG centrado sobre el nombre */}
         <motion.div
           className="w-[17px] h-[19px] opacity-60 flex justify-center"
@@ -124,13 +124,13 @@ export default function MountainProductCard({ product }: MountainProductCardProp
               alt={product.name}
               width={200}
               height={20}
-              className="w-[30%] h-[15%] md:w-[40%] md:h-[20%] object-contain"
+              className="w-[30%] h-[15%] md:w-[28%] md:h-[20%] object-contain"
               priority
             />
           </div>
         ) : (
           <h2
-            className="text-7xl font-light tracking-wider text-gray-300 text-center"
+            className="text-8xl font-light tracking-wider text-gray-300 text-center"
             style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}
           >
             {product.name.toLowerCase()}

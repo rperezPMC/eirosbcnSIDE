@@ -51,7 +51,7 @@ export function Header() {
   ]
 
   const navigationRight = [
-    { name: t('navigation.gearup'), href: `/${locale}/gear-up` },
+    // { name: t('navigation.gearup'), href: `/${locale}/gear-up` },
     { name: t('navigation.eiros'), href: `/${locale}/eiros` },
   ]
 
@@ -201,7 +201,7 @@ export function Header() {
             <img
               src="/images/header/header_mobile.svg"
               alt="Eiros Logo"
-              className="h-[15px] w-auto object-contain"
+              className="h-[15px] w-auto object-contain translate-x-[25px]"
             />
           </Link>
         </div>

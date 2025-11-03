@@ -149,7 +149,7 @@ export default function ProductHistorySection({
             </h2>
 
             <p
-              className="text-[14px] md:text-[16px] text-[#f9f9f9] leading-[22px] md:leading-[26px] md:ml-10 text-justify-right md:text-right"
+              className="text-[14px] md:text-[16px] text-[#f9f9f9] leading-[22px] md:leading-[26px] md:ml-10 text-justify md:text-right"
               style={{ fontFamily: 'Montserrat' }}
             >
               {historyDescription}
