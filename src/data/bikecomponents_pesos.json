@@ -1,0 +1,12 @@
+[
+  {
+    "Id": 3,
+    "ProductoId": 3,
+    "Peso": 230,
+    "Stock": 50,
+    "Disponible": true,
+    "EsPrincipal": true,
+    "Orden": 1,
+    "FechaCreacion": "2025-10-22T10:00:54.253Z"
+  }
+]

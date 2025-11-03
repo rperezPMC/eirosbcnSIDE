@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "Id": 1,
+    "Nombre": "Blanco",
+    "RutaLogo": "/images/logos/colors/logo_blanco.png",
+    "CodigoHex": "#DEDEDE",
+    "Orden": 1,
+    "Activo": true
+  },
+  {
+    "Id": 2,
+    "Nombre": "Carbon",
+    "RutaLogo": "/images/logos/colors/logo_carbon.png",
+    "CodigoHex": "#1A1A1A",
+    "Orden": 2,
+    "Activo": true
+  },
+  {
+    "Id": 3,
+    "Nombre": "Gris",
+    "RutaLogo": "/images/logos/colors/logo_gris.png",
+    "CodigoHex": "#333333",
+    "Orden": 3,
+    "Activo": true
+  },
+  {
+    "Id": 4,
+    "Nombre": "Negro",
+    "RutaLogo": "/images/logos/colors/logo_negro.png",
+    "CodigoHex": "#000000",
+    "Orden": 4,
+    "Activo": true
+  },
+  {
+    "Id": 6,
+    "Nombre": "Patron Rojo",
+    "RutaLogo": "/images/logos/colors/logo_patron_rojo.png",
+    "CodigoHex": "#DC143C",
+    "Orden": 6,
+    "Activo": true
+  },
+  {
+    "Id": 5,
+    "Nombre": "Rojo",
+    "RutaLogo": "/images/logos/colors/logo_rojo.png",
+    "CodigoHex": "#910000",
+    "Orden": 5,
+    "Activo": true
+  }
+]

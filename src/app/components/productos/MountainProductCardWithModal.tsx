@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import MountainProductCard from './MountainProductCard'
-import { MountainProduct } from '@/lib/services/mountainProductService'
+import { MountainProduct } from '@/lib/services/mountainProductService.json'
 
 interface MountainProductCardWithDataProps {
   product: MountainProduct

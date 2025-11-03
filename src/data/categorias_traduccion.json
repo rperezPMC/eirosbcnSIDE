@@ -1,0 +1,35 @@
+[
+  {
+    "Id": 3,
+    "CategoriaId": 1,
+    "IdiomaId": 1,
+    "Nombre": "Mountain",
+    "Descripcion": "Componentes para bicicletas de montaña",
+    "MetaTitulo": null,
+    "MetaDescripcion": null,
+    "FechaCreacion": "2025-10-22T08:33:21.867Z",
+    "FechaModificacion": null
+  },
+  {
+    "Id": 1,
+    "CategoriaId": 1,
+    "IdiomaId": 2,
+    "Nombre": "Mountain",
+    "Descripcion": "Components per a bicicletes de muntanya",
+    "MetaTitulo": null,
+    "MetaDescripcion": null,
+    "FechaCreacion": "2025-10-22T08:33:21.867Z",
+    "FechaModificacion": null
+  },
+  {
+    "Id": 2,
+    "CategoriaId": 1,
+    "IdiomaId": 3,
+    "Nombre": "Mountain",
+    "Descripcion": "Mountain bike components",
+    "MetaTitulo": null,
+    "MetaDescripcion": null,
+    "FechaCreacion": "2025-10-22T08:33:21.867Z",
+    "FechaModificacion": null
+  }
+]

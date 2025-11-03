@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "Codigo": "es",
+    "Nombre": "Español",
+    "NombreNativo": "Español",
+    "EsPredeterminado": true,
+    "Activo": true,
+    "Orden": 1,
+    "FechaCreacion": "2025-10-21T13:06:41.033Z"
+  },
+  {
+    "Id": 2,
+    "Codigo": "ca",
+    "Nombre": "Catalán",
+    "NombreNativo": "Català",
+    "EsPredeterminado": false,
+    "Activo": true,
+    "Orden": 2,
+    "FechaCreacion": "2025-10-21T13:06:41.033Z"
+  },
+  {
+    "Id": 3,
+    "Codigo": "en",
+    "Nombre": "Inglés",
+    "NombreNativo": "English",
+    "EsPredeterminado": false,
+    "Activo": true,
+    "Orden": 3,
+    "FechaCreacion": "2025-10-21T13:06:41.033Z"
+  }
+]

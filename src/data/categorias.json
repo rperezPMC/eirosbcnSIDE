@@ -1,0 +1,15 @@
+[
+  {
+    "Id": 1,
+    "Codigo": "mountain",
+    "TipoProducto": "BikeComponents",
+    "Icono": null,
+    "Color": "#50A1B0",
+    "Imagen": null,
+    "SlugUrl": "mountain",
+    "Activo": true,
+    "Orden": 1,
+    "FechaCreacion": "2025-10-22T08:33:21.863Z",
+    "FechaModificacion": null
+  }
+]

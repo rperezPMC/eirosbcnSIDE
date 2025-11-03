@@ -41,6 +41,8 @@ export interface FiltrosProductos {
   colores?: string[];
   materiales?: string[];
   tallas?: string[];
+  genero?: string;
+  temporada?: string;
 }
 
 export function obtenerProductosConFiltros(filtros: FiltrosProductos): ProductoConImagenes[] {
@@ -99,6 +101,20 @@ export function obtenerProductosConFiltros(filtros: FiltrosProductos): ProductoC
   if (filtros.tallas && filtros.tallas.length > 0) {
     productos = productos.filter(p => 
       'Talla' in p && p.Talla && filtros.tallas!.includes(p.Talla)
+    );
+  }
+
+  // Filtro genero
+  if (filtros.genero) {
+    productos = productos.filter(p => 
+      'Genero' in p && p.Genero === filtros.genero
+    );
+  }
+
+  // Filtro temporada
+  if (filtros.temporada) {
+    productos = productos.filter(p => 
+      'Temporada' in p && p.Temporada === filtros.temporada
     );
   }
 
