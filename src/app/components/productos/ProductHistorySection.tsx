@@ -84,19 +84,22 @@ export default function ProductHistorySection({
       <div className="max-w-[1600px] mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 md:gap-12 items-center">
 
-          <div className="order-1 md:order-2">
+          <div className="order-1 md:order-2 relative">
+            {/* Contenedor con degradado */}
             <div
-              className="relative rounded-[16px] md:rounded-[20px] overflow-hidden"
+              className="relative rounded-[16px] md:rounded-[20px] overflow-visible"
               style={{
                 background:
                   'linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(80,161,176,0.44) 47%, rgba(0,0,0,0) 100%)',
-                padding: PAD
+                padding: PAD,
+                zIndex: 1
               }}
             >
               <div
                 className="relative flex items-center justify-center overflow-hidden mx-auto"
                 style={{ width: FRAME_W, height: FRAME_H }}
               >
+                {/* Slider de imágenes */}
                 <motion.div
                   className="relative w-full flex items-center justify-center cursor-grab active:cursor-grabbing"
                   style={{ height: INNER_H }}
@@ -150,6 +153,28 @@ export default function ProductHistorySection({
                     })}
                   </AnimatePresence>
                 </motion.div>
+              </div>
+            </div>
+
+            {/* Marco SVG por encima del contenedor padre */}
+            <div 
+              className="absolute pointer-events-none flex items-center justify-center"
+              style={{ 
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                zIndex: 100
+              }}
+            >
+              <div style={{ transform: 'scale(1.8)' }}>
+                <Image
+                  src="/images/mountain/marc.svg"
+                  alt="Frame"
+                  width={FRAME_W + (PAD * 2)}
+                  height={FRAME_H + (PAD * 2)}
+                  className="w-full h-full object-fill"
+                />
               </div>
             </div>
           </div>
