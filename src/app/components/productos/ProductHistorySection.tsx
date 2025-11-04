@@ -82,24 +82,29 @@ export default function ProductHistorySection({
   return (
     <div className="w-full bg-black py-12 md:py-20 pl-4 pr-4">
       <div className="max-w-[1600px] mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 md:gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] pt-20 gap-10 md:gap-12 items-center">
 
           <div className="order-1 md:order-2 relative">
             {/* Contenedor con degradado */}
             <div
               className="relative rounded-[16px] md:rounded-[20px] overflow-visible"
-              style={{
-                background:
-                  'linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(80,161,176,0.44) 47%, rgba(0,0,0,0) 100%)',
-                padding: PAD,
-                zIndex: 1
-              }}
+              style={{ padding: PAD }}
             >
+              {/* Capa de degradado detrás */}
               <div
-                className="relative flex items-center justify-center overflow-hidden mx-auto"
+                aria-hidden
+                className="absolute inset-0 rounded-[inherit] -z-10"
+                style={{
+                  background:
+                    'linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(80,161,176,0.44) 47%, rgba(0,0,0,0) 100%)'
+                }}
+              />
+
+              <div
+                className="relative z-10 flex items-center justify-center overflow-hidden mx-auto"
                 style={{ width: FRAME_W, height: FRAME_H }}
               >
-                {/* Slider de imágenes */}
+                {/* Slider */}
                 <motion.div
                   className="relative w-full flex items-center justify-center cursor-grab active:cursor-grabbing"
                   style={{ height: INNER_H }}
@@ -113,7 +118,7 @@ export default function ProductHistorySection({
                       const isCenter = img.position === 'center'
                       const isLeft = img.position === 'left'
                       const isRight = img.position === 'right'
-                      
+
                       return (
                         <motion.div
                           key={img.index}
@@ -122,8 +127,8 @@ export default function ProductHistorySection({
                           animate={{
                             x: isLeft ? -OFFSET_X : isRight ? OFFSET_X : 0,
                             scale: isCenter ? 1 : 0.85,
-                            opacity: isCenter ? 1 : 0.85,
-                            zIndex: isCenter ? 10 : 5
+                            opacity: 1,
+                            zIndex: isCenter ? 10 : 5,
                           }}
                           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                           onClick={() => {
@@ -133,7 +138,7 @@ export default function ProductHistorySection({
                           style={{ cursor: isCenter ? 'default' : 'pointer' }}
                         >
                           <div
-                            className="bg-white rounded-[16px] md:rounded-[20px] overflow-hidden transition-shadow hover:shadow-lg"
+                            className="relative z-20 bg-white rounded-[16px] md:rounded-[20px] overflow-hidden"
                             style={{
                               width: isCenter ? CENTER_W : SIDE_W,
                               height: isCenter ? CENTER_H : SIDE_H
@@ -155,6 +160,7 @@ export default function ProductHistorySection({
                 </motion.div>
               </div>
             </div>
+
 
             {/* Marco SVG por encima del contenedor padre */}
             <div 
@@ -179,7 +185,7 @@ export default function ProductHistorySection({
             </div>
           </div>
 
-          <div className="order-2 md:order-1 flex flex-col gap-4 md:gap-0 justify-center md:px-8 md:text-right md:pr-12">
+          <div className="order-2 md:order-1 flex flex-col gap-4 md:gap-0 justify-center mt-20 md:px-8 md:text-right md:pr-12">
             <h2
               className="text-[30px] leading-[38px] md:text-[32px] md:leading-[40px] font-bold text-white text-center md:text-right md:mb-4 md:mt-4 md:mt-10 px-4 md:px-0 md:pr-2"
               style={{ fontFamily: 'Poppins' }}

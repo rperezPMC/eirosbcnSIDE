@@ -304,7 +304,7 @@ export default function HeroSection() {
             <motion.div
               className="w-full max-w-[860px] aspect-[4/6] md:aspect-video rounded-[12px] md:rounded-[20px] overflow-hidden"
             >
-              <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+              <video autoPlay loop muted playsInline className="w-full h-full object-cover ">
                 <source
                   src={
                     isMobile
