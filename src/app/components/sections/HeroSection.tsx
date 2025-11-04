@@ -196,7 +196,7 @@ export default function HeroSection() {
             {/* Imagen del manillar - Móvil arriba */}
             <div className="w-full px-0 h-32 overflow-hidden flex items-center justify-center">
               <img
-                src="/images/home/manillar_forged_gods.png"
+                src="/images/home/manillar_forged_gods_blue_hover.png"
                 alt="Manillar ATENA"
                 className="w-full h-auto object-contain"
               />
@@ -354,7 +354,7 @@ export default function HeroSection() {
           <ImageGrid />
         </section>
 
-        {/* Footer */}
+        {/* FOOTER */}
         <section className="w-full bg-luxury-navy">
           <Footer />
         </section>

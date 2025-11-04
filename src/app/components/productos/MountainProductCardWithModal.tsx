@@ -74,6 +74,7 @@ export function MountainProductCardWithData({ product }: MountainProductCardWith
       }
     }),
     sizes: product.potencias.map(p => ({
+      id: p.id.toString(),
       value: p.potencia,
       available: p.disponible && p.stock > 0
     })),

@@ -23,7 +23,6 @@ export default function VideoCarousel() {
   const [isPaused, setIsPaused] = useState(false)
   const [direction, setDirection] = useState(0)
 
-  // Responsive container
   const containerRef = useRef<HTMLDivElement>(null)
   const [containerWidth, setContainerWidth] = useState(1440)
 
@@ -51,14 +50,12 @@ export default function VideoCarousel() {
   }
   const handleVideoEnd = () => goToNext()
 
-  // Auto avance cada 6 s
   useEffect(() => {
     if (isPaused) return
     const timer = setInterval(goToNext, 6000)
     return () => clearInterval(timer)
   }, [isPaused, currentIndex])
 
-  // Reproducir video cuando se selecciona
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.play().catch(() => {})
@@ -96,7 +93,7 @@ export default function VideoCarousel() {
     <div className="w-full flex flex-col items-center py-4">
       <motion.div
         ref={containerRef}
-        className="relative w-full max-w-[1440px] h-[400px] md:h-[495px] overflow-hidden"
+        className="relative w-full max-w-[1440px] h-[450px] md:h-[545px] overflow-visible"
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         dragElastic={0.2}
@@ -130,9 +127,12 @@ export default function VideoCarousel() {
               }}
             >
               <div
-                  className="relative w-full rounded-[20px] overflow-hidden transition-opacity duration-300 aspect-[3/4] md:aspect-[16/9]"
-                  style={{ opacity: isCenter ? 1 : 0.6 }}
-                >
+                className="relative w-full rounded-[20px] overflow-hidden transition-opacity duration-300 aspect-[3/4] md:aspect-[16/9]"
+                style={{ 
+                  opacity: isCenter ? 1 : 0.6,
+                  boxShadow: '0 20px 40px rgba(80, 161, 176, 0.25)'
+                }}
+              >
                 <video
                   ref={isCenter ? videoRef : null}
                   autoPlay={isCenter}

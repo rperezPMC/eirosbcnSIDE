@@ -74,7 +74,7 @@
         "Id": 5,
         "ProductoId": 3,
         "VarianteId": null,
-        "RutaArchivo": "/images/mountain/productos/atena/principal/manillar_frontal_gris.png",
+        "RutaArchivo": "/images/mountain/productos/atena/principal/manillar_frontal_mate.png",
         "TipoImagen": "principal",
         "AltText": null,
         "EsPrincipal": false,

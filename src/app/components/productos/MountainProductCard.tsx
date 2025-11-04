@@ -19,6 +19,7 @@ export interface ProductVariant {
 }
 
 export interface ProductSize {
+  id: string
   value: string
   available: boolean
 }
@@ -147,17 +148,19 @@ export default function MountainProductCard({ product }: MountainProductCardProp
       </div>
 
       {/* Imagen principal grande */}
-      <div className="flex justify-center mb-8 px-0  md:px-8">
-        <div className="w-full md:max-w-[83%] max-h-[240px]">
+      <div className="flex justify-center mb-8 px-0 md:px-8 md:mt-10">
+        <div className="w-full md:w-[80%] lg:w-[85%]">
           <Image
             src={currentMainImage}
             alt={product.name}
-            width={800}
-            height={300}
+            width={1500}
+            height={600}
             className="w-full h-auto object-contain"
+            priority
           />
         </div>
       </div>
+
 
       {/* Indicador de material */}
       <div className="hidden md:flex justify-center mb-8">
@@ -218,7 +221,7 @@ export default function MountainProductCard({ product }: MountainProductCardProp
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
 
           {/* Columna Izquierda: Imagen con slider de galería */}
-          <div className="relative flex items-center justify-center bg-gradient-to-b from-[#50a1b0]/10 to-transparent rounded-3xl md:rounded-3xl pl-4 md:p-12">
+          <div className="relative flex items-center justify-center bg-gradient-to-b from-[#50a1b0]/20 to-transparent rounded-3xl md:rounded-3xl pl-4 md:p-12">
             {/* Alto más generoso en móvil */}
             <div className="w-full aspect-[4/4] md:aspect-[4/3]">
               <Image
@@ -226,7 +229,7 @@ export default function MountainProductCard({ product }: MountainProductCardProp
                 alt={`${product.name} gallery ${galleryIndex + 1}`}
                 width={1200}
                 height={900}
-                className="w-full h-full object-contain"
+                className="object-contain md:object-cover rounded-3xl transition-all duration-300"
               />
             </div>
 
@@ -314,7 +317,7 @@ export default function MountainProductCard({ product }: MountainProductCardProp
               <div className="flex gap-3 flex-wrap">
                 {product.sizes.map((size) => (
                   <motion.button
-                    key={size.value}
+                    key={size.id}
                     onClick={() => size.available && setSelectedSize(size.value)}
                     disabled={!size.available}
                     className={`px-3 md:px-4 py-2 rounded-full border transition-all ${

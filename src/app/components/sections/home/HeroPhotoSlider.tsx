@@ -204,14 +204,14 @@ function MobileView({ sliders }: { sliders: SliderItem[] }) {
     <div className="flex flex-col items-center">
       <CarouselBox slider={sliders[activeCarousel]} />
       
-      {/* Indicadores de carousel */}
-      <div className="flex gap-2 justify-center mt-6">
+      {/* Indicadores de carousel más grandes y separados */}
+      <div className="flex gap-5 justify-center mt-8">
         {sliders.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setActiveCarousel(idx)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              idx === activeCarousel ? 'w-8 bg-luxury-teal' : 'w-2 bg-white/30'
+            className={`h-3 rounded-full transition-all duration-300 ${
+              idx === activeCarousel ? 'w-12 bg-luxury-teal' : 'w-3 bg-white/30'
             }`}
           />
         ))}

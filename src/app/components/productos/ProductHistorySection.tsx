@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, PanInfo } from 'framer-motion'
 import Image from 'next/image'
 
 interface ProductHistorySectionProps {
@@ -19,7 +19,6 @@ export default function ProductHistorySection({
   const [direction, setDirection] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
 
-  // Responsive flag
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768)
     check()
@@ -27,7 +26,6 @@ export default function ProductHistorySection({
     return () => window.removeEventListener('resize', check)
   }, [])
 
-  // Auto-avanzar carousel cada 4 s
   useEffect(() => {
     if (images.length <= 1) return
     const i = setInterval(() => {
@@ -41,12 +39,21 @@ export default function ProductHistorySection({
     setDirection(-1)
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
   }
+  
   const handleNext = () => {
     setDirection(1)
     setCurrentIndex((prev) => (prev + 1) % images.length)
   }
 
-  // Imágenes visibles
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    const threshold = 50
+    if (info.offset.x > threshold) {
+      handlePrevious()
+    } else if (info.offset.x < -threshold) {
+      handleNext()
+    }
+  }
+
   const getVisibleImages = () => {
     if (images.length === 0) return []
     if (images.length === 1) return [{ src: images[0], index: 0, position: 'center' as const }]
@@ -58,16 +65,16 @@ export default function ProductHistorySection({
       { src: images[nextIndex], index: nextIndex, position: 'right' as const }
     ]
   }
+  
   const visibleImages = getVisibleImages()
   if (!historyDescription || images.length === 0) return null
 
-  // Dimensiones responsive del carrusel
   const CENTER_W = isMobile ? 220 : 270
   const CENTER_H = isMobile ? 320 : 380
   const SIDE_W   = isMobile ? 160 : 210
-  const SIDE_H   = isMobile ? 225 : 295
-  const OFFSET_X = isMobile ? 220 : 320
-  const FRAME_W  = isMobile ? 360 : 440
+  const SIDE_H   = isMobile ? 260 : 330
+  const OFFSET_X = isMobile ? 210 : 240
+  const FRAME_W  = isMobile ? 320 : 380
   const FRAME_H  = isMobile ? 340 : 412
   const INNER_H  = isMobile ? 300 : 380
   const PAD      = isMobile ? 24  : 45
@@ -75,10 +82,8 @@ export default function ProductHistorySection({
   return (
     <div className="w-full bg-black py-12 md:py-20 pl-4 pr-4">
       <div className="max-w-[1600px] mx-auto px-4 md:px-8">
-        {/* Móvil: 1 col (slider arriba). Desktop: 2 cols */}
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 md:gap-12 items-center">
 
-          {/* Carousel (arriba en móvil) */}
           <div className="order-1 md:order-2">
             <div
               className="relative rounded-[16px] md:rounded-[20px] overflow-hidden"
@@ -88,20 +93,24 @@ export default function ProductHistorySection({
                 padding: PAD
               }}
             >
-              {/* Marco del carrusel */}
               <div
                 className="relative flex items-center justify-center overflow-hidden mx-auto"
                 style={{ width: FRAME_W, height: FRAME_H }}
               >
-                <div
-                  className="relative w-full flex items-center justify-center"
+                <motion.div
+                  className="relative w-full flex items-center justify-center cursor-grab active:cursor-grabbing"
                   style={{ height: INNER_H }}
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.2}
+                  onDragEnd={handleDragEnd}
                 >
                   <AnimatePresence initial={false} mode="popLayout">
                     {visibleImages.map((img) => {
                       const isCenter = img.position === 'center'
                       const isLeft = img.position === 'left'
                       const isRight = img.position === 'right'
+                      
                       return (
                         <motion.div
                           key={img.index}
@@ -109,14 +118,19 @@ export default function ProductHistorySection({
                           initial={false}
                           animate={{
                             x: isLeft ? -OFFSET_X : isRight ? OFFSET_X : 0,
-                            scale: isCenter ? 1 : 0.78,
-                            opacity: isCenter ? 1 : 0.6,
-                            zIndex: isCenter ? 10 : 1
+                            scale: isCenter ? 1 : 0.85,
+                            opacity: isCenter ? 1 : 0.85,
+                            zIndex: isCenter ? 10 : 5
                           }}
                           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                          onClick={() => {
+                            if (isLeft) handlePrevious()
+                            if (isRight) handleNext()
+                          }}
+                          style={{ cursor: isCenter ? 'default' : 'pointer' }}
                         >
                           <div
-                            className="bg-white rounded-[16px] md:rounded-[20px] overflow-hidden"
+                            className="bg-white rounded-[16px] md:rounded-[20px] overflow-hidden transition-shadow hover:shadow-lg"
                             style={{
                               width: isCenter ? CENTER_W : SIDE_W,
                               height: isCenter ? CENTER_H : SIDE_H
@@ -128,18 +142,18 @@ export default function ProductHistorySection({
                               width={isCenter ? CENTER_W : SIDE_W}
                               height={isCenter ? CENTER_H : SIDE_H}
                               className="w-full h-full object-cover"
+                              draggable={false}
                             />
                           </div>
                         </motion.div>
                       )
                     })}
                   </AnimatePresence>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
 
-          {/* Texto (debajo en móvil) */}
           <div className="order-2 md:order-1 flex flex-col gap-4 md:gap-0 justify-center md:px-8 md:text-right md:pr-12">
             <h2
               className="text-[30px] leading-[38px] md:text-[32px] md:leading-[40px] font-bold text-white text-center md:text-right md:mb-4 md:mt-4 md:mt-10 px-4 md:px-0 md:pr-2"

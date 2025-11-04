@@ -2,7 +2,7 @@
   {
     "Id": 3,
     "ProductoId": 3,
-    "Potencia": "0 mm",
+    "Potencia": "0mm",
     "Width": "0mm",
     "Rise": "0mm",
     "Stock": 20,
@@ -13,7 +13,7 @@
   {
     "Id": 4,
     "ProductoId": 3,
-    "Potencia": "0 mm",
+    "Potencia": "0mm",
     "Width": "0mm",
     "Rise": "0mm",
     "Stock": 25,
