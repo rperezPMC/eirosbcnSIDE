@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence, PanInfo, type Transition } from 'framer-motion'
+import { useState } from 'react'
+import { motion, PanInfo, type Transition } from 'framer-motion'
 
 // Tipos
 interface SliderItem {
@@ -23,28 +23,6 @@ const sliderData: SliderItem[] = [
   {
     id: 'atena',
     name: 'ATENA',
-    images: [
-      '/images/home/ThreeSlider/image_1.png',
-      '/images/home/ThreeSlider/image_2.png',
-      '/images/home/ThreeSlider/image_3.png',
-      '/images/home/ThreeSlider/image_4.png',
-      '/images/home/ThreeSlider/image_5.png'
-    ]
-  },
-  {
-    id: 'minotaur',
-    name: 'MINOTAUR',
-    images: [
-      '/images/home/ThreeSlider/image_1.png',
-      '/images/home/ThreeSlider/image_2.png',
-      '/images/home/ThreeSlider/image_3.png',
-      '/images/home/ThreeSlider/image_4.png',
-      '/images/home/ThreeSlider/image_5.png'
-    ]
-  },
-  {
-    id: 'accessories',
-    name: 'ACCESSORIES',
     images: [
       '/images/home/ThreeSlider/image_1.png',
       '/images/home/ThreeSlider/image_2.png',
@@ -79,14 +57,6 @@ export default function HeroPhotoSlider() {
 function CarouselBox({ slider }: CarouselBoxProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isDragging, setIsDragging] = useState(false)
-
-  // Auto-play
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % slider.images.length)
-    }, 3500)
-    return () => clearInterval(interval)
-  }, [slider.images.length])
 
   const goToPrevious = () => setCurrentIndex(p => Math.max(0, p - 1))
   const goToNext = () => setCurrentIndex(p => Math.min(slider.images.length - 1, p + 1))
@@ -204,7 +174,7 @@ function MobileView({ sliders }: { sliders: SliderItem[] }) {
     <div className="flex flex-col items-center">
       <CarouselBox slider={sliders[activeCarousel]} />
       
-      {/* Indicadores de carousel más grandes y separados */}
+      {/* Indicadores de carousel más grandes y separados 
       <div className="flex gap-5 justify-center mt-8">
         {sliders.map((_, idx) => (
           <button
@@ -216,6 +186,7 @@ function MobileView({ sliders }: { sliders: SliderItem[] }) {
           />
         ))}
       </div>
+      */}
     </div>
   )
 }

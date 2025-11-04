@@ -1,7 +1,7 @@
 [
   {
     "Id": 1,
-    "Nombre": "Blanco",
+    "Nombre": "carbon white",
     "RutaLogo": "/images/logos/colors/logo_blanco.png",
     "CodigoHex": "#DEDEDE",
     "Orden": 1,
@@ -9,7 +9,7 @@
   },
   {
     "Id": 2,
-    "Nombre": "Carbon",
+    "Nombre": "carbon obsidian",
     "RutaLogo": "/images/logos/colors/logo_carbon.png",
     "CodigoHex": "#1A1A1A",
     "Orden": 2,
@@ -17,7 +17,7 @@
   },
   {
     "Id": 3,
-    "Nombre": "Gris",
+    "Nombre": "carbon matte black",
     "RutaLogo": "/images/logos/colors/logo_gris.png",
     "CodigoHex": "#333333",
     "Orden": 3,
@@ -25,7 +25,7 @@
   },
   {
     "Id": 4,
-    "Nombre": "Negro",
+    "Nombre": "carbon black",
     "RutaLogo": "/images/logos/colors/logo_negro.png",
     "CodigoHex": "#000000",
     "Orden": 4,
@@ -33,7 +33,7 @@
   },
   {
     "Id": 6,
-    "Nombre": "Patron Rojo",
+    "Nombre": "carbon custom",
     "RutaLogo": "/images/logos/colors/logo_patron_rojo.png",
     "CodigoHex": "#DC143C",
     "Orden": 6,
@@ -41,7 +41,7 @@
   },
   {
     "Id": 5,
-    "Nombre": "Rojo",
+    "Nombre": "carbon red",
     "RutaLogo": "/images/logos/colors/logo_rojo.png",
     "CodigoHex": "#910000",
     "Orden": 5,

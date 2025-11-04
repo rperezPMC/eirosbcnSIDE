@@ -2,9 +2,9 @@
   {
     "Id": 3,
     "ProductoId": 3,
-    "Backsweep": "8°",
-    "Upsweep": "5°",
-    "ClampDiameter": "31.8mm",
+    "Backsweep": "0",
+    "Upsweep": "0",
+    "ClampDiameter": "0",
     "Material": "Carbon fiber",
     "Construction": "Hephaestus-V Core Monocoque",
     "Autoclave": true,

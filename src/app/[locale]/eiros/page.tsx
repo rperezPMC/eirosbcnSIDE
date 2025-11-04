@@ -57,16 +57,10 @@ export default function EirosPage() {
       {/* SOBRE NOSOTROS */}
       <section id='about-content' className="w-full flex flex-col items-center justify-center bg-luxury-black">
         {/* Título */}
-        <h2 
-          className="text-[30px] leading-[38px] md:text-7xl font-bold text-white text-center px-4 md:px-0 m-0 md:mt-10"
-          style={{ fontFamily: 'Poppins', fontWeight: 700, lineHeight: '70px' }}
-        >
+        <h2 className="text-[30px] md:text-7xl font-bold text-white text-center px-4 md:px-0 m-0 md:mt-10">
           {t('hero.title')}
         </h2>
-        <h2 
-          className="text-[30px] leading-[38px] md:text-7xl font-bold text-white text-center px-4 md:px-0 m-0"
-          style={{ fontFamily: 'Poppins', fontWeight: 700, lineHeight: '70px' }}
-        >
+        <h2 className="text-[30px] md:text-7xl font-bold text-white text-center px-4 md:px-0 m-0 leading-none mb-4">
           {t('hero.title2')}
         </h2>
 

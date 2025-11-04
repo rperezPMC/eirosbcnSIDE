@@ -10,20 +10,20 @@ export function Footer() {
   return (
     <footer className="relative bg-luxury-navy text-white overflow-hidden">
 
-      <div className="absolute top-0 left-0 right-0 flex justify-center pointer-events-none md:hidden pt-6">
+      <div className="absolute top-20 left-0 right-0 flex justify-center pointer-events-none md:hidden">
         <img 
-          src="/images/home/manillar_forged_gods.png" 
-          alt="" 
-          className="w-auto h-[300px] object-contain opacity-80"
+          src="/images/home/manillar_forged_gods_blue_hover.png" 
+          alt="Imagen manillar footer" 
+          className="w-auto h-[33%] object-contain opacity-80"
         />
       </div>
 
       {/* Imagen de fondo para desktop - centrada */}
-      <div className="absolute inset-0 hidden md:flex items-center justify-center pointer-events-none">
+      <div className="absolute inset-0 hidden md:flex items-center justify-center pointer-events-none pb-12">
         <img 
-          src="/images/home/manillar_forged_gods.png" 
-          alt="" 
-          className="w-auto h-[44%] object-contain opacity-100"
+          src="/images/home/manillar_forged_gods_blue_hover.png" 
+          alt="Imagen manillar footer" 
+          className="w-auto h-[140%] object-contain opacity-100"
         />
       </div>
 
@@ -52,6 +52,7 @@ export function Footer() {
               
               {/* Newsletter y redes sociales primero en móvil */}
               <div className="flex flex-col items-center gap-6">
+
                 {/* Input de newsletter */}
                 <div className="w-full max-w-[340px]">
                   <div className="bg-white/20 rounded-[30px] px-4 h-9 flex items-center">
@@ -219,7 +220,24 @@ export function Footer() {
               </div>
 
               {/* Columna central - Redes sociales y newsletter */}
-              <div className="flex flex-col items-center gap-3 md:flex-1 mt-5">
+              <div className="flex flex-col items-center gap-2 md:flex-1 mt-12">
+
+
+                {/* Input de newsletter */}
+                <div className="w-full max-w-md">
+                  <div className="bg-white/20 rounded-[30px] px-4 h-9 flex items-center">
+                    <input
+                      type="email"
+                      placeholder={t('social.newsletterPlaceholder')}
+                      className="bg-transparent border-none outline-none text-sm text-luxury-grey w-full placeholder:text-luxury-grey font-montserrat"
+                    />
+                  </div>
+                </div>
+
+                <p className="text-base font-montserrat font-medium text-center">
+                  {t('social.tagline')}
+                </p>
+
                 {/* Iconos de redes sociales */}
                 <div className="flex gap-4">
                   <a 
@@ -272,20 +290,7 @@ export function Footer() {
                   </a>
                 </div>
 
-                <p className="text-base font-montserrat font-medium text-center">
-                  {t('social.tagline')}
-                </p>
 
-                {/* Input de newsletter */}
-                <div className="w-full max-w-md">
-                  <div className="bg-white/20 rounded-[30px] px-4 h-9 flex items-center">
-                    <input
-                      type="email"
-                      placeholder={t('social.newsletterPlaceholder')}
-                      className="bg-transparent border-none outline-none text-sm text-luxury-grey w-full placeholder:text-luxury-grey font-montserrat"
-                    />
-                  </div>
-                </div>
               </div>
 
               {/* Columna derecha - Más información */}

@@ -40,6 +40,7 @@ export interface Product {
   price: number
   inStock: boolean
   description: string
+  material?: string
   specifications: {
     width: string
     rise: string
@@ -75,14 +76,10 @@ export default function MountainProductCard({ product }: MountainProductCardProp
 
   const selectedVariantData = product.variants.find(v => v.id === selectedVariant)
   
-  // Obtener imagen principal según color seleccionado
   const currentMainImage = selectedVariantData?.imagenPrincipal || product.mainImage
-  
-  // Obtener imágenes de galería del color actual
   const currentGalleryImages = selectedVariantData?.galeriaImagenes || []
   const currentGalleryImage = currentGalleryImages[galleryIndex] || currentMainImage
   
-  // Resetear índice de galería cuando cambia la variante
   const handleVariantChange = (variantId: string) => {
     setSelectedVariant(variantId)
     setGalleryIndex(0)
@@ -104,20 +101,13 @@ export default function MountainProductCard({ product }: MountainProductCardProp
     <div className="w-full bg-black text-white py-16">
       {/* Logo y Nombre */}
       <div className="flex flex-col items-center gap-3">
-        {/* Nuevo SVG centrado sobre el nombre */}
         <motion.div
           className="w-[17px] h-[19px] opacity-60 flex justify-center"
           initial={{ rotate: 0, scaleY: 1 }}
         >
-          <svg width="25" height="25" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M0.744776 11.2144L8.36174 18.8313L15.9787 11.2144C16.9718 10.2213 16.9718 8.61003 15.9787 7.61697L8.36174 0L0.744776 7.61697C-0.248291 8.61003 -0.248291 10.2213 0.744776 11.2144Z"
-              fill="#ffffffff"
-            />
-          </svg>
+          
         </motion.div>
 
-        {/* Nombre del producto */}
         {product.nameSvgPath ? (
           <div className="w-full max-w-md flex justify-center relative">
             <Image
@@ -138,7 +128,6 @@ export default function MountainProductCard({ product }: MountainProductCardProp
           </h2>
         )}
 
-        {/* Subtítulo */}
         <p
           className="text-[#50a1b0] text-sm tracking-[0.3em] uppercase"
           style={{ fontFamily: "Montserrat", fontWeight: "400", letterSpacing: "0" }}
@@ -148,7 +137,7 @@ export default function MountainProductCard({ product }: MountainProductCardProp
       </div>
 
       {/* Imagen principal grande */}
-      <div className="flex justify-center mb-8 px-0 md:px-8 md:mt-10">
+      <div className="flex justify-center mt-10 mb-8 px-0 md:px-8 md:mt-10">
         <div className="w-full md:w-[80%] lg:w-[85%]">
           <Image
             src={currentMainImage}
@@ -161,16 +150,15 @@ export default function MountainProductCard({ product }: MountainProductCardProp
         </div>
       </div>
 
-
-      {/* Indicador de material */}
-      <div className="hidden md:flex justify-center mb-8">
-        <span className="text-sm text-gray-400" style={{ fontFamily: 'Montserrat' }}>
-          carbon
+      {/* Nombre del color en móvil */}
+      <div className="flex justify-center md:mb-8 mb-4">
+        <span className="text-sm text-[#A7A7A7]" style={{ fontFamily: 'Montserrat' }}>
+          {selectedVariantData?.colorName || 'Color'}
         </span>
       </div>
 
       {/* Selectores de color  */}
-      <div className="flex justify-center gap-10 md:gap-6 mb-3 md:mb-16">
+      <div className="flex justify-center gap-8 md:gap-6 mb-3 md:mb-16">
         {product.variants.map((variant) => (
           <motion.button
             key={variant.id}
@@ -216,24 +204,34 @@ export default function MountainProductCard({ product }: MountainProductCardProp
         ))}
       </div>
 
+
+
       {/* Sección principal: Imagen + Detalles */}
       <div className="max-w-[1400px] mx-auto px-0 md:px-8 pl-4 pr-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
 
           {/* Columna Izquierda: Imagen con slider de galería */}
-          <div className="relative flex items-center justify-center bg-gradient-to-b from-[#50a1b0]/20 to-transparent rounded-3xl md:rounded-3xl pl-4 md:p-12">
-            {/* Alto más generoso en móvil */}
-            <div className="w-full aspect-[4/4] md:aspect-[4/3]">
+          <div className="relative flex items-center justify-center bg-gradient-to-b from-[#50a1b0]/90 to-transparent rounded-3xl md:rounded-3xl overflow-hidden">
+            
+            {/* Indicador de material dinámico */}
+            {product.material && (
+              <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20">
+                <span className="text-xs md:text-sm text-gray-400" style={{ fontFamily: 'Montserrat' }}>
+                  {product.material}
+                </span>
+              </div>
+            )}
+
+            <div className="w-full aspect-[4/4] md:aspect-[4/3] relative">
               <Image
                 src={currentGalleryImage}
                 alt={`${product.name} gallery ${galleryIndex + 1}`}
                 width={1200}
                 height={900}
-                className="object-contain md:object-cover rounded-3xl transition-all duration-300"
+                className="object-cover md:object-cover rounded-3xl transition-all duration-300"
               />
             </div>
 
-            {/* Botones de navegación del slider */}
             {currentGalleryImages.length > 1 && (
               <>
                 <button
@@ -344,24 +342,20 @@ export default function MountainProductCard({ product }: MountainProductCardProp
               <motion.button
                 onClick={() => setShowOrderModal(true)}
                 disabled={!selectedSize || !selectedVariantData}
-                className="flex items-center gap-0 md:gap-3 px-6 md:px-8 py-2.5 md:py-3 border-2 border-[#93c5f2] rounded-full hover:bg-[#93c5f2]/10 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex items-center gap-0 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 border-2 border-[#93c5f2] rounded-full hover:bg-[#93c5f2]/10 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <img src="/images/logos/logo_small_azul.svg" alt="Logo" className='h-5 w-5'/>
+                <img src="/images/logos/logo_small_azul.svg" alt="Logo" className='h-6 w-6'/>
                 <span className="text-[16px] md:text-[24px] pl-2 font-semibold text-white" style={{ fontFamily: 'Poppins' }}>
                   RESERVAR
                 </span>
               </motion.button>
 
-              {/* Precio + indicador de stock */}
               <div className="relative flex items-center">
-                {/* Indicador de stock */}
                 {product.inStock && (
                   <span className="absolute top-2.5 -right-4 w-2 h-2 rounded-full bg-luxury-green" />
                 )}
-
-                {/* Precio */}
                 <span
                   className="text-xl md:text-2xl text-white"
                   style={{ fontFamily: 'Montserrat' }}

@@ -2,7 +2,7 @@
   {
     "Id": 7,
     "ProductoId": 3,
-    "Color": "Carbon",
+    "Color": "carbon obsidian",
     "CodigoHex": "#1A1A1A",
     "SKUVariante": null,
     "PrecioAdicional": 0,
@@ -16,7 +16,7 @@
   {
     "Id": 3,
     "ProductoId": 3,
-    "Color": "Blanco",
+    "Color": "carbon white",
     "CodigoHex": "#DEDEDE",
     "SKUVariante": null,
     "PrecioAdicional": 0,
@@ -30,7 +30,7 @@
   {
     "Id": 5,
     "ProductoId": 3,
-    "Color": "Rojo",
+    "Color": "carbon red",
     "CodigoHex": "#910000",
     "SKUVariante": null,
     "PrecioAdicional": 0,
@@ -44,7 +44,7 @@
   {
     "Id": 6,
     "ProductoId": 3,
-    "Color": "Negro",
+    "Color": "carbon black",
     "CodigoHex": "#000000",
     "SKUVariante": null,
     "PrecioAdicional": 0,
@@ -58,7 +58,7 @@
   {
     "Id": 4,
     "ProductoId": 3,
-    "Color": "Gris",
+    "Color": "carbon matte black",
     "CodigoHex": "#333333",
     "SKUVariante": null,
     "PrecioAdicional": 0,
@@ -72,7 +72,7 @@
   {
     "Id": 8,
     "ProductoId": 3,
-    "Color": "Patron Rojo",
+    "Color": "carbon custom",
     "CodigoHex": "#DC143C",
     "SKUVariante": null,
     "PrecioAdicional": 0,

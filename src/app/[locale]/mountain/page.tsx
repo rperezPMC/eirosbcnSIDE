@@ -25,11 +25,23 @@ export default async function MountainPage({
         </div>
       </section>
 
-      {/* Sección de navegacion */}
+      {/* Sección de navegacion 
       <section id='mountain-navigation-section' className="w-full justify-center mt-8 mb-12 md:mt-2 md:mb-10">
         <MountainOrganigrama />
       </section>
+      */}
 
+      <section className="w-full bg-luxury-black flex items-center justify-center py-0 -mt-4">
+        <div className="w-[350px] h-[320px] md:w-[528px] md:h-[400px] rounded-[16px] overflow-hidden">
+          <img
+            src="/images/mountain/menu.svg"
+            alt="Gravel menu"
+            className="w-full h-full object-contain bg-black"
+            style={{ clipPath: 'inset(60px 0 40px 0)' }}
+          />
+        </div>
+      </section>
+      
       <section id="products" className="w-full">
         {productos.length > 0 ? (
           productos.map((producto) => (
