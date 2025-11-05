@@ -113,6 +113,30 @@ const emailTexts = {
   }
 }
 
+const nlTexts = {
+  es: {
+    subject: 'Bienvenido a la newsletter',
+    title: '¡Bienvenido!',
+    p1: 'Te has suscrito correctamente a nuestra newsletter.',
+    p2: 'Pronto recibirás noticias, lanzamientos y ofertas exclusivas.',
+    bye: 'Gracias por unirte a la comunidad Eiros BCN.',
+  },
+  ca: {
+    subject: 'Benvingut al butlletí',
+    title: 'Benvingut!',
+    p1: 'T’has subscrit correctament al nostre butlletí.',
+    p2: 'Aviat rebràs notícies, llançaments i ofertes exclusives.',
+    bye: 'Gràcies per unir-te a la comunitat Eiros BCN.',
+  },
+  en: {
+    subject: 'Welcome to our newsletter',
+    title: 'Welcome!',
+    p1: 'You have successfully subscribed to our newsletter.',
+    p2: 'You will soon receive news, launches and exclusive offers.',
+    bye: 'Thanks for joining the Eiros BCN community.',
+  }
+}
+
 // Correo al admin (siempre en español)
 export async function enviarCorreoPedido(pedido: PedidoEmail) {
   const html = `
@@ -292,4 +316,80 @@ export async function enviarCorreoConfirmacionCliente(pedido: PedidoEmail) {
     console.error('❌ Error enviando correo confirmación:', error)
     throw new Error('Error al enviar correo de confirmación al cliente')
   }
+}
+
+// --- en emailService.ts ---
+export async function enviarCorreoNewsletterAdmin(params: { email: string; locale?: string }) {
+  const { email, locale } = params
+  const html = `
+  <!DOCTYPE html>
+  <html lang="es"><head><meta charset="UTF-8">
+    <style>
+      body { font-family: Montserrat, Arial, sans-serif; background:#f4f4f4; padding:20px; }
+      .container { max-width:600px; margin:0 auto; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+      .header { background: linear-gradient(135deg, #50a1b0 0%, #3d8291 100%); color:#fff; padding:24px 30px; text-align:center; }
+      .content { padding:30px; color:#333; }
+      .row { margin-bottom:10px; }
+      .label { color:#666; min-width:140px; display:inline-block; }
+      .footer { background:#f8f8f8; padding:16px; text-align:center; color:#999; font-size:12px; }
+    </style>
+  </head><body>
+    <div class="container">
+      <div class="header"><h1>📰 Nuevo suscriptor Newsletter</h1></div>
+      <div class="content">
+        <div class="row"><span class="label">Email:</span> <strong>${email}</strong></div>
+        <div class="row"><span class="label">Idioma:</span> ${locale || 'es'}</div>
+        <div class="row"><span class="label">Fecha:</span> ${new Date().toLocaleString('es-ES')}</div>
+      </div>
+      <div class="footer">Eiros BCN — Newsletter</div>
+    </div>
+  </body></html>`
+
+  const info = await transporter.sendMail({
+    from: `"Eiros BCN" <${process.env.SMTP_USER}>`,
+    to: process.env.ADMIN_EMAIL,
+    subject: `📰 Nuevo suscriptor newsletter: ${email}`,
+    html
+  })
+  console.log('✅ Newsletter admin:', info.messageId)
+  return { success: true, messageId: info.messageId }
+}
+
+export async function enviarCorreoNewsletterBienvenida(params: { email: string; locale?: string }) {
+  const { email, locale = 'es' } = params
+  const t = (nlTexts as any)[locale] || nlTexts.es
+
+  const html = `
+  <!DOCTYPE html>
+  <html lang="${locale}"><head><meta charset="UTF-8">
+    <style>
+      body { font-family: Montserrat, Arial, sans-serif; background:#f4f4f4; padding:20px; }
+      .container { max-width:600px; margin:0 auto; background:#fff; border-radius:10px; overflow:hidden; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+      .header { background: linear-gradient(135deg, #50a1b0 0%, #3d8291 100%); color:#fff; padding:36px 30px; text-align:center; }
+      .header h1 { margin:0; }
+      .content { padding:30px; color:#333; line-height:1.7; }
+      .footer { background:#2a2a2a; color:#ccc; text-align:center; padding:18px; font-size:12px; }
+    </style>
+  </head><body>
+    <div class="container">
+      <div class="header"><h1>${t.title}</h1></div>
+      <div class="content">
+        <p>${t.p1}</p>
+        <p>${t.p2}</p>
+        <p style="margin-top:12px;">${t.bye}</p>
+      </div>
+      <div class="footer">
+        Eiros BCN · ${new Date().toLocaleDateString(locale === 'ca' ? 'ca-ES' : locale === 'en' ? 'en-US' : 'es-ES')}
+      </div>
+    </div>
+  </body></html>`
+
+  const info = await transporter.sendMail({
+    from: `"Eiros BCN" <${process.env.SMTP_USER}>`,
+    to: email,
+    subject: `✓ ${t.subject} - Eiros BCN`,
+    html
+  })
+  console.log('✅ Newsletter bienvenida:', info.messageId)
+  return { success: true, messageId: info.messageId }
 }

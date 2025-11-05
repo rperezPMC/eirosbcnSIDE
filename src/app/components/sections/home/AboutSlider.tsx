@@ -152,7 +152,12 @@ export default function AboutSlider() {
                             width={isCenter ? CENTER_W : SIDE_W}
                             height={isCenter ? CENTER_H : SIDE_H}
                             className="w-full h-full object-cover"
+                            style={{ 
+                              filter: 'brightness(0.6) contrast(1)',
+                            }}
                           />
+                          {/* Capa adicional oscura para mejorar legibilidad del texto */}
+                          <div className="absolute inset-0 bg-black/20" />
                         </div>
 
                         {/* Texto central */}
@@ -162,10 +167,10 @@ export default function AboutSlider() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 1 }}
-                            className="absolute inset-0 flex flex-col items-center justify-center text-center text-white"
+                            className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10"
                           >
-                            <h2 className="font-bold text-[20px] leading-[24px] mb-1">{img.slide.title}</h2>
-                            <p className="font-normal text-[16px] leading-[18px] tracking-[-0.5px]">{img.slide.subtitle}</p>
+                            <h2 className="font-bold text-[20px] leading-[24px] mb-1 drop-shadow-lg">{img.slide.title}</h2>
+                            <p className="font-normal text-[16px] leading-[18px] tracking-[-0.5px] drop-shadow-lg">{img.slide.subtitle}</p>
                           </motion.div>
                         )}
                       </motion.div>

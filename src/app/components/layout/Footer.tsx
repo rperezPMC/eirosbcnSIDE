@@ -2,6 +2,7 @@
 
 import { useTranslations, useLocale } from 'next-intl'
 import Link from 'next/link'
+import { NewsletterForm } from './NewsletterForm'
 
 export function Footer() {
   const t = useTranslations('Footer')
@@ -52,17 +53,9 @@ export function Footer() {
               
               {/* Newsletter y redes sociales primero en móvil */}
               <div className="flex flex-col items-center gap-6">
-
+                
                 {/* Input de newsletter */}
-                <div className="w-full max-w-[340px]">
-                  <div className="bg-white/20 rounded-[30px] px-4 h-9 flex items-center">
-                    <input
-                      type="email"
-                      placeholder={t('social.newsletterPlaceholder')}
-                      className="bg-transparent border-none outline-none text-sm text-gray-400 w-full placeholder:text-gray-400 font-montserrat"
-                    />
-                  </div>
-                </div>
+                <NewsletterForm />
 
                 {/* Redes sociales */}
                 <div className="flex flex-col items-center gap-2">
@@ -223,18 +216,10 @@ export function Footer() {
               <div className="flex flex-col items-center gap-2 md:flex-1 mt-12">
 
 
-                {/* Input de newsletter */}
-                <div className="w-full max-w-md">
-                  <div className="bg-white/20 rounded-[30px] px-4 h-9 flex items-center">
-                    <input
-                      type="email"
-                      placeholder={t('social.newsletterPlaceholder')}
-                      className="bg-transparent border-none outline-none text-sm text-luxury-grey w-full placeholder:text-luxury-grey font-montserrat"
-                    />
-                  </div>
-                </div>
+              {/* Input de newsletter */}
+              <NewsletterForm />
 
-                <p className="text-base font-montserrat font-medium text-center">
+                <p className="text-base font-montserrat font-medium justify-center text-center">
                   {t('social.tagline')}
                 </p>
 

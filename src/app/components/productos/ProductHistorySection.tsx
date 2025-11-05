@@ -69,45 +69,25 @@ export default function ProductHistorySection({
   const visibleImages = getVisibleImages()
   if (!historyDescription || images.length === 0) return null
 
-  const CENTER_W = isMobile ? 220 : 270
+  const CENTER_W = isMobile ? 240 : 270
   const CENTER_H = isMobile ? 320 : 380
-  const SIDE_W   = isMobile ? 160 : 210
-  const SIDE_H   = isMobile ? 260 : 330
-  const OFFSET_X = isMobile ? 210 : 240
-  const FRAME_W  = isMobile ? 320 : 380
-  const FRAME_H  = isMobile ? 340 : 412
-  const INNER_H  = isMobile ? 300 : 380
-  const PAD      = isMobile ? 24  : 45
+  const SIDE_W = isMobile ? 180 : 210
+  const SIDE_H = isMobile ? 280 : 330
+  const OFFSET_X = isMobile ? 220 : 240
 
   return (
     <div className="w-full bg-black py-12 md:py-20 pl-4 pr-4">
       <div className="max-w-[1600px] mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] pt-20 gap-10 md:gap-12 items-center">
 
+          {/* Slider con estilos de HeroPhotoSlider */}
           <div className="order-1 md:order-2 relative">
-            {/* Contenedor con degradado */}
-            <div
-              className="relative rounded-[16px] md:rounded-[20px] overflow-visible"
-              style={{ padding: PAD }}
-            >
-              {/* Capa de degradado detrás */}
-              <div
-                aria-hidden
-                className="absolute inset-0 rounded-[inherit] -z-10"
-                style={{
-                  background:
-                    'linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(80,161,176,0.44) 47%, rgba(0,0,0,0) 100%)'
-                }}
-              />
-
-              <div
-                className="relative z-10 flex items-center justify-center overflow-hidden mx-auto"
-                style={{ width: FRAME_W, height: FRAME_H }}
-              >
-                {/* Slider */}
+            {/* Contenedor estilo HeroPhotoSlider - fondo negro con borde */}
+            <div className="relative w-[380px] lg:w-[400px] rounded-[20px] overflow-hidden p-4 bg-black border-2 border-[#50a1b0] mx-auto">
+              <div className="relative w-full h-[360px] lg:h-[400px] overflow-hidden rounded-[16px]">
                 <motion.div
                   className="relative w-full flex items-center justify-center cursor-grab active:cursor-grabbing"
-                  style={{ height: INNER_H }}
+                  style={{ height: '100%' }}
                   drag="x"
                   dragConstraints={{ left: 0, right: 0 }}
                   dragElastic={0.2}
@@ -138,10 +118,11 @@ export default function ProductHistorySection({
                           style={{ cursor: isCenter ? 'default' : 'pointer' }}
                         >
                           <div
-                            className="relative z-20 bg-white rounded-[16px] md:rounded-[20px] overflow-hidden"
+                            className="relative z-20 bg-white rounded-[16px] overflow-hidden"
                             style={{
                               width: isCenter ? CENTER_W : SIDE_W,
-                              height: isCenter ? CENTER_H : SIDE_H
+                              height: isCenter ? CENTER_H : SIDE_H,
+                              boxShadow: '0 0 0 1px rgba(147,197,242,0.12) inset'
                             }}
                           >
                             <Image
@@ -160,31 +141,9 @@ export default function ProductHistorySection({
                 </motion.div>
               </div>
             </div>
-
-
-            {/* Marco SVG por encima del contenedor padre */}
-            <div 
-              className="absolute pointer-events-none flex items-center justify-center"
-              style={{ 
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                zIndex: 100
-              }}
-            >
-              <div style={{ transform: 'scale(1.8)' }}>
-                <Image
-                  src="/images/mountain/marc.svg"
-                  alt="Frame"
-                  width={FRAME_W + (PAD * 2)}
-                  height={FRAME_H + (PAD * 2)}
-                  className="w-full h-full object-fill"
-                />
-              </div>
-            </div>
           </div>
 
+          {/* Texto original mantenido */}
           <div className="order-2 md:order-1 flex flex-col gap-4 md:gap-0 justify-center mt-20 md:px-8 md:text-right md:pr-12">
             <h2
               className="text-[30px] leading-[38px] md:text-[32px] md:leading-[40px] font-bold text-white text-center md:text-right md:mb-4 md:mt-4 md:mt-10 px-4 md:px-0 md:pr-2"

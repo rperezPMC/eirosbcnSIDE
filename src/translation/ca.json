@@ -180,7 +180,12 @@
     },
     "social": {
       "tagline": "Pedala amb nosaltres",
-      "newsletterPlaceholder": "escriu aquí el teu email i rep notícies"
+      "newsletterPlaceholder": "el teu email i rep notícies",
+      "newsletterCTA": "Subscribe",
+      "newsletterSending": "Enviant...",
+      "newsletterSuccess": "Subscrit!",
+      "newsletterError": "Error en subscriure",
+      "newsletterEdit": "Canviar"
     },
     "moreInfo": {
       "title": "MÉS INFORMACIÓ",

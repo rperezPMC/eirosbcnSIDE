@@ -180,7 +180,12 @@
     },
     "social": {
       "tagline": "Ride with us",
-      "newsletterPlaceholder": "enter your email here and receive news"
+      "newsletterPlaceholder": "your email here and receive news",
+      "newsletterCTA": "Subscribe",
+      "newsletterSending": "Sending...",
+      "newsletterSuccess": "Subscribed!",
+      "newsletterError": "Error subscribing",
+      "newsletterEdit": "Change"
     },
     "moreInfo": {
       "title": "MORE INFORMATION",

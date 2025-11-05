@@ -101,11 +101,13 @@ export default function MountainProductCard({ product }: MountainProductCardProp
     <div className="w-full bg-black text-white py-16">
       {/* Logo y Nombre */}
       <div className="flex flex-col items-center gap-3">
-        <motion.div
-          className="w-[17px] h-[19px] opacity-60 flex justify-center"
-          initial={{ rotate: 0, scaleY: 1 }}
-        >
-          
+        <motion.div className="w-[17px] h-[19px] opacity-60 flex justify-center" initial={{ rotate: 0, scaleY: 1 }}>
+          <svg width="25" height="25" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0.744776 11.2144L8.36174 18.8313L15.9787 11.2144C16.9718 10.2213 16.9718 8.61003 15.9787 7.61697L8.36174 0L0.744776 7.61697C-0.248291 8.61003 -0.248291 10.2213 0.744776 11.2144Z"
+              fill="#ffffffff"
+            />
+          </svg>
         </motion.div>
 
         {product.nameSvgPath ? (
@@ -158,7 +160,7 @@ export default function MountainProductCard({ product }: MountainProductCardProp
       </div>
 
       {/* Selectores de color  */}
-      <div className="flex justify-center gap-8 md:gap-6 mb-3 md:mb-16">
+      <div className="flex justify-center gap-6 md:gap-6 mb-3 md:mb-16">
         {product.variants.map((variant) => (
           <motion.button
             key={variant.id}

@@ -179,8 +179,13 @@
       "returns": "Devoluciones"
     },
     "social": {
-      "tagline": "Pedala con nosotros",
-      "newsletterPlaceholder": "escribe aquí tu email y recibe noticias"
+      "tagline": "Pedalea con nosotros",
+      "newsletterPlaceholder": "tu email y recibe noticias",
+      "newsletterCTA": "Subscribe",
+      "newsletterSending": "Enviando...",
+      "newsletterSuccess": "¡Suscrito!",
+      "newsletterError": "Error al suscribirse",
+      "newsletterEdit": "Cambiar"
     },
     "moreInfo": {
       "title": "MÁS INFORMACIÓN",

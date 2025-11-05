@@ -53,68 +53,67 @@ export default function EirosPage() {
         </div>
       </section>
 
-
       {/* SOBRE NOSOTROS */}
-      <section id='about-content' className="w-full flex flex-col items-center justify-center bg-luxury-black">
+      <section id='about-content' className="w-full flex flex-col mt-4 items-center justify-center bg-luxury-black">
         {/* Título */}
-        <h2 className="text-[30px] md:text-7xl font-bold text-white text-center px-4 md:px-0 m-0 md:mt-10">
+        <h2 className="text-[30px] md:text-7xl font-bold text-white text-center px-4 md:px-0 m-0 leading-none">
           {t('hero.title')}
         </h2>
-        <h2 className="text-[30px] md:text-7xl font-bold text-white text-center px-4 md:px-0 m-0 leading-none mb-4">
+        <h2 className="text-[30px] md:text-7xl font-bold text-white text-center mb-4 px-4 md:px-0 m-0 leading-none">
           {t('hero.title2')}
         </h2>
 
         {/* Descripción */}
-        <div className="px-8 justify-content text-justify md:w-[55%] md:justify-center md:mt-10" style={{ fontFamily: 'Montserrat', fontSize: '16px', lineHeight: '26px', color: '#f9f9f9' }}>
+        <div className="px-8 text-justify md:w-[55%] md:mt-10" style={{ fontFamily: 'Montserrat', fontSize: '16px', lineHeight: '26px', color: '#f9f9f9' }}>
           <p className="mb-4">
             {t('content.parragraph1')}
           </p>
         </div>
       </section>
-      
-      
+
       {/* HOVER SECTION SOBRE NOSOTROS*/}
       <section
-            id="hover-section-about"
-            className="w-full h-full flex justify-center bg-black mt-4 md:mt-4 mb-4"
-            onMouseEnter={() => !isMobile && setIsHovered(true)}
-            onMouseLeave={() => !isMobile && setIsHovered(false)}
-          >
-            <div
-              className={`w-[85%] rounded-[20px] overflow-hidden relative ${
-                isMobile ? 'aspect-[7/10]' : ''
-              }`}
-              style={!isMobile ? { aspectRatio: '17/6' } : undefined}
-            >
-              {/* Versión móvil */}
-              {isMobile ? (
-                <img
-                  src="/images/about/inspired_about_mobile.png"
-                  alt="Inspired About Mobile"
-                  className="w-full h-[full] object-cover absolute top-0 left-0"
-                />
-              ) : (
-                <>
-                  {/* Imagen por defecto */}
-                  <img
-                    src="/images/about/inspired_about.png"
-                    alt="Inspired About"
-                    className={`w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 ${
-                      isHovered ? 'opacity-0' : 'opacity-100'
-                    }`}
-                  />
+        id="hover-section-about"
+        className="w-full h-full flex justify-center bg-black mt-4 md:mt-4 mb-4"
+        onMouseEnter={() => !isMobile && setIsHovered(true)}
+        onMouseLeave={() => !isMobile && setIsHovered(false)}
+      >
+        <div
+          className={`w-[85%] rounded-[20px] overflow-hidden relative ${
+            isMobile ? 'aspect-[9/16]' : ''  // Cambiado a aspect ratio vertical estándar para móviles
+          }`}
+          style={!isMobile ? { aspectRatio: '17/6' } : undefined}
+        >
+          {/* Versión móvil */}
+          {isMobile ? (
+            <img
+              src="/images/about/inspired_about_mobile.png"
+              alt="Inspired About Mobile"
+              className="w-full h-full object-contain"  // Cambiado de object-cover a object-contain
+              // Removido absolute y posicionamiento ya que no es necesario con una sola imagen
+            />
+          ) : (
+            <>
+              {/* Imagen por defecto */}
+              <img
+                src="/images/about/inspired_about.png"
+                alt="Inspired About"
+                className={`w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 ${
+                  isHovered ? 'opacity-0' : 'opacity-100'
+                }`}
+              />
 
-                  {/* Imagen al hacer hover */}
-                  <img
-                    src="/images/about/inspired2_about.png"
-                    alt="Inspired About Hover"
-                    className={`w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 ${
-                      isHovered ? 'opacity-100' : 'opacity-0'
-                    }`}
-                  />
-                </>
-              )}
-            </div>
+              {/* Imagen al hacer hover */}
+              <img
+                src="/images/about/inspired2_about.png"
+                alt="Inspired About Hover"
+                className={`w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 ${
+                  isHovered ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            </>
+          )}
+        </div>
       </section>
       
       {/* SOBRE NOSOTROS */}
@@ -171,6 +170,20 @@ export default function EirosPage() {
 
       {/* SLIDER SOBRE NOSOTROS */}
       <AboutSlider />
+
+      <section id="logo-section" className="md:w-full h-[60%] bg-luxury-black flex justify-center items-center mt-10 md:mt-20">
+        <img
+          src="/images/logos/logo_grande.svg"
+          alt="Logo grande"
+          className="w-18 md:w-30 lg:w-[12rem] h-auto"
+        />
+      </section>
+
+      {/* IMAGE GRID */}
+      <section className="w-full bg-luxury-black">
+        <ImageGrid />
+      </section>
+      
 
     </div>
   )

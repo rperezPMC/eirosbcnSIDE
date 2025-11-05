@@ -44,7 +44,7 @@ export default function RoadPage() {
       </section>
 
       <section className="w-full bg-luxury-black flex items-center justify-center py-0 -mt-3">
-        <div className="w-[800px] h-[210px] md:h-[426px] rounded-[16px] overflow-hidden">
+        <div className="w-[800px] h-[190px] md:h-[426px] rounded-[16px] overflow-hidden">
           <img
             src={
               isMobile
@@ -52,7 +52,7 @@ export default function RoadPage() {
                 : "/images/gravel/coming_soon_gravel.png"
             }
             alt="Gravel coming soon"
-            className="w-full h-full object-cover bg-black" // 👈 cambia object-contain por object-cover
+            className="w-full h-full object-cover bg-black"
           />
         </div>
       </section>

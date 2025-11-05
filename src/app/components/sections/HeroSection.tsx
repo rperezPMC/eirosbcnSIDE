@@ -301,21 +301,33 @@ export default function HeroSection() {
 
           <div className="w-full px-3 md:px-6 flex flex-col items-center justify-center gap-6 md:gap-10 rounded-[20px]">        
             {/* Video */}
-            <motion.div
-              className="w-full max-w-[860px] aspect-[4/6] md:aspect-video rounded-[12px] md:rounded-[20px] overflow-hidden"
-            >
-              <video autoPlay loop muted playsInline className="w-full h-full object-cover ">
+            <motion.div className=" w-full max-w-[860px] rounded-[12px] md:rounded-[20px] overflow-hidden md:aspect-video">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="
+                  w-full 
+                  h-auto 
+                  md:h-full 
+                  md:object-cover
+                  rounded-[12px] md:rounded-[20px]
+                "
+                style={{
+                  maxHeight: '120vh', // 🔹 hace el video más alto en mobile
+                }}
+              >
                 <source
                   src={
                     isMobile
-                      ? "/videos/home/video_mountain_cta_mobile.mp4"
-                      : "/videos/home/video_mountain_cta.mp4"
+                      ? '/videos/home/video_mountain_cta_mobile.mp4'
+                      : '/videos/home/video_mountain_cta.mp4'
                   }
                   type="video/mp4"
                 />
               </video>
             </motion.div>
-
 
             {/* Texto */}
             <motion.div 
