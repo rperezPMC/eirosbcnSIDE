@@ -143,13 +143,13 @@
     }
   },
   "Submit": {
-    "title": "Solicitar Pedido",
+    "title": "Solicitar Reserva",
     "success": {
-      "title": "¡Pedido enviado!",
+      "title": "¡Reserva enviada!",
       "message": "Nos pondremos en contacto contigo pronto"
     },
     "error": {
-      "generic": "Error al enviar pedido",
+      "generic": "Error al enviar reserva",
       "connection": "Error de conexión. Por favor, inténtalo de nuevo"
     },
     "productDetails": {
@@ -166,7 +166,7 @@
       "message": "Mensaje adicional (opcional)"
     },
     "buttons": {
-      "submit": "Enviar Pedido",
+      "submit": "Enviar Reserva",
       "sending": "Enviando..."
     }
   },

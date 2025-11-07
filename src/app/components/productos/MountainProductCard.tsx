@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import { useTranslations } from 'next-intl'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import ProductHistorySection from './ProductHistorySection'
 import OrderModal from './OrderModal'
 import React from 'react'
@@ -125,13 +124,14 @@ export default function MountainProductCard({ product }: MountainProductCardProp
 
         {product.nameSvgPath ? (
           <div className="w-full max-w-md flex justify-center relative">
-            <Image
+            <img
               src={product.nameSvgPath}
               alt={product.name}
-              width={200}
-              height={20}
               className="w-[30%] h-[15%] md:w-[28%] md:h-[20%] object-contain"
-              priority
+              style={{
+                WebkitTransform: 'translateZ(0)',
+                WebkitBackfaceVisibility: 'hidden'
+              }}
             />
           </div>
         ) : (
@@ -154,13 +154,15 @@ export default function MountainProductCard({ product }: MountainProductCardProp
       {/* Imagen principal grande */}
       <div className="flex justify-center mt-10 mb-8 px-0 md:px-8 md:mt-10">
         <div className="w-full md:w-[80%] lg:w-[85%]">
-          <Image
+          <img
             src={currentMainImage}
             alt={product.name}
-            width={1500}
-            height={600}
             className="w-full h-auto object-contain"
-            priority
+            data-preload="true"
+            style={{
+              WebkitTransform: 'translateZ(0)',
+              WebkitBackfaceVisibility: 'hidden'
+            }}
           />
         </div>
       </div>
@@ -185,14 +187,17 @@ export default function MountainProductCard({ product }: MountainProductCardProp
           >
             {variant.colorLogo ? (
               <>
-                <Image
+                <img
                   src={variant.colorLogo}
                   alt={variant.colorName}
-                  width={40}
-                  height={40}
                   className={`w-full h-full object-contain transition-all ${
                     !variant.available ? 'opacity-30 grayscale' : 'opacity-100'
                   }`}
+                  data-preload="true"
+                  style={{
+                    WebkitTransform: 'translateZ(0)',
+                    WebkitBackfaceVisibility: 'hidden'
+                  }}
                 />
                 {selectedVariant === variant.id && (
                   <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-red-600" />
@@ -238,12 +243,15 @@ export default function MountainProductCard({ product }: MountainProductCardProp
             )}
 
             <div className="w-full aspect-[4/4] md:aspect-[4/3] relative">
-              <Image
+              <img
                 src={currentGalleryImage}
                 alt={`${product.name} gallery ${galleryIndex + 1}`}
-                width={1200}
-                height={900}
-                className="object-cover md:object-cover rounded-3xl transition-all duration-300"
+                className="w-full h-full object-cover md:object-cover rounded-3xl transition-all duration-300"
+                data-preload="true"
+                style={{
+                  WebkitTransform: 'translateZ(0)',
+                  WebkitBackfaceVisibility: 'hidden'
+                }}
               />
             </div>
 
@@ -254,11 +262,9 @@ export default function MountainProductCard({ product }: MountainProductCardProp
                   className="absolute left-3 md:left-9 bottom-3 md:bottom-6 z-10 w-10 h-10 transition-colors flex items-center justify-center backdrop-blur-sm"
                   aria-label="Previous gallery image"
                 >
-                  <Image
+                  <img
                     src={isMobile ? "/images/addons/flecha_izquierda_mobile.svg" : "/images/addons/flecha_izquierda.svg"}
                     alt="Previous"
-                    width={24}
-                    height={24}
                     className={`w-6 h-6 ${isIOSSafari ? '[-webkit-transform:scaleX(-1)!important] [transform:scaleX(-1)!important]' : ''}`}
                   />
                 </button>
@@ -268,11 +274,9 @@ export default function MountainProductCard({ product }: MountainProductCardProp
                   className="absolute right-3 md:right-9 bottom-3 md:bottom-6 z-10 w-10 h-10 transition-colors flex items-center justify-center backdrop-blur-sm"
                   aria-label="Next gallery image"
                 >
-                  <Image
+                  <img
                     src={isMobile ? "/images/addons/flecha_derecha_mobile.svg" : "/images/addons/flecha_derecha.svg"}
                     alt="Next"
-                    width={24}
-                    height={24}
                     className="w-6 h-6"
                   />
                 </button>

@@ -50,7 +50,7 @@ const emailTexts = {
     header: '¡Pedido Recibido!',
     thanks: 'Gracias por confiar en Eiros BCN',
     greeting: 'Hola',
-    message1: 'Hemos recibido tu solicitud de reserva correctamente. Nuestro equipo revisará tu pedido y se pondrá en contacto contigo muy pronto para confirmar la disponibilidad y coordinar los detalles de entrega.',
+    message1: 'Hemos recibido tu solicitud de reserva correctamente. Nuestro equipo revisará tu pedido y se pondrá en contacto contigo muy pronto para confirmar la disponibilidad y coordinar los siguientes pasos a realizar.',
     message2: 'Tu número de pedido es:',
     summaryTitle: 'Resumen de tu Pedido',
     product: 'Producto',
@@ -72,7 +72,7 @@ const emailTexts = {
     header: 'Comanda Rebuda!',
     thanks: 'Gràcies per confiar en Eiros BCN',
     greeting: 'Hola',
-    message1: 'Hem rebut la teva sol·licitud de reserva correctament. El nostre equip revisarà la teva comanda i es posarà en contacte amb tu molt aviat per confirmar la disponibilitat i coordinar els detalls de lliurament.',
+    message1: 'Hem rebut la teva sol·licitud de reserva correctament. El nostre equip revisarà la teva comanda i es posarà en contacte amb tu molt aviat per confirmar la disponibilitat i coordinar els següents passos a realitzar.',
     message2: 'El teu número de comanda és:',
     summaryTitle: 'Resum de la teva Comanda',
     product: 'Producte',
@@ -94,7 +94,7 @@ const emailTexts = {
     header: 'Order Received!',
     thanks: 'Thank you for trusting Eiros BCN',
     greeting: 'Hello',
-    message1: 'We have successfully received your reservation request. Our team will review your order and contact you very soon to confirm availability and coordinate delivery details.',
+    message1: 'We have successfully received your reservation request. Our team will review your order and contact you very soon to confirm availability and coordinate the next steps to be taken.',
     message2: 'Your order number is:',
     summaryTitle: 'Order Summary',
     product: 'Product',
@@ -180,9 +180,7 @@ export async function enviarCorreoPedido(pedido: PedidoEmail) {
             <h3>🚴 Detalles del Producto</h3>
             <div class="info-row"><span class="info-label">Producto:</span><span class="info-value"><strong>${pedido.nombreProducto}</strong></span></div>
             <div class="info-row"><span class="info-label">Color:</span><span class="info-value">${pedido.colorSeleccionado}</span></div>
-            <div class="info-row"><span class="info-label">Potencia:</span><span class="info-value">${pedido.potenciaSeleccionada}</span></div>
-            <div class="info-row"><span class="info-label">Peso:</span><span class="info-value">${pedido.pesoSeleccionado}</span></div>
-            <div class="info-row"><span class="info-label">Precio:</span><span class="price">${pedido.precio.toFixed(2)} €</span></div>
+            <div class="info-row"><span class="info-label">Mensaje:</span><span class="info-value">${pedido.mensaje}</span></div>
           </div>
         </div>
         <div class="footer"><p>Pedido recibido: ${new Date().toLocaleString('es-ES')}</p></div>
@@ -263,28 +261,14 @@ export async function enviarCorreoConfirmacionCliente(pedido: PedidoEmail) {
           
           <div class="message-box">
             <p>${t.message1}</p>
-            <p>${t.message2} <span class="order-number">${pedido.numPedido}</span></p>
           </div>
 
           <div class="section">
             <h3>🚴 ${t.summaryTitle}</h3>
             <div class="info-row"><span class="info-label">${t.product}:</span><span class="info-value"><strong>${pedido.nombreProducto}</strong></span></div>
             <div class="info-row"><span class="info-label">${t.color}:</span><span class="info-value">${pedido.colorSeleccionado}</span></div>
-            <div class="info-row"><span class="info-label">${t.potency}:</span><span class="info-value">${pedido.potenciaSeleccionada}</span></div>
-            <div class="info-row"><span class="info-label">${t.weight}:</span><span class="info-value">${pedido.pesoSeleccionado}</span></div>
           </div>
 
-          <div class="price-highlight">
-            <p>${t.total}</p>
-            <div class="price">${pedido.precio.toFixed(2)} €</div>
-          </div>
-
-          <div class="message-box">
-            <p><strong>${t.nextSteps}</strong></p>
-            <p>${t.step1}</p>
-            <p>${t.step2}</p>
-            <p>${t.step3}</p>
-          </div>
         </div>
         
         <div class="footer">

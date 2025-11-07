@@ -143,13 +143,13 @@
     }
   },
   "Submit": {
-    "title": "Request Order",
+    "title": "Request Reservation",
     "success": {
-      "title": "Order submitted!",
+      "title": "Reservation submitted!",
       "message": "We will contact you soon"
     },
     "error": {
-      "generic": "Error submitting order",
+      "generic": "Error submitting reservation",
       "connection": "Connection error. Please try again"
     },
     "productDetails": {
@@ -166,7 +166,7 @@
       "message": "Additional message (optional)"
     },
     "buttons": {
-      "submit": "Submit Order",
+      "submit": "Submit Reservation",
       "sending": "Sending..."
     }
   },

@@ -111,18 +111,6 @@ export default function LoaderGate({ children }: { children: React.ReactNode }) 
       {show && (
         <div className="fixed inset-0 z-[1000] bg-black">
           <div className="w-full h-full relative flex items-center justify-center">
-            {/* Logo fallback siempre visible */}
-            <div className="absolute inset-0 flex items-center justify-center z-10">
-              <img
-                src="/images/logos/logo_small_azul.svg"
-                alt="Loading"
-                className="w-20 h-20 md:w-24 md:h-24 animate-pulse"
-                style={{
-                  WebkitTransform: 'translateZ(0)',
-                  WebkitBackfaceVisibility: 'hidden'
-                }}
-              />
-            </div>
             
             {/* Video de fondo */}
             <video

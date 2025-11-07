@@ -143,13 +143,13 @@
     }
   },
   "Submit": {
-    "title": "Sol·licitar Comanda",
+    "title": "Sol·licitar Reserva",
     "success": {
-      "title": "Comanda enviada!",
+      "title": "Reserva enviada!",
       "message": "Ens posarem en contacte amb tu aviat"
     },
     "error": {
-      "generic": "Error en enviar la comanda",
+      "generic": "Error en enviar la reserva",
       "connection": "Error de connexió. Si us plau, torna-ho a intentar"
     },
     "productDetails": {
@@ -166,7 +166,7 @@
       "message": "Missatge addicional (opcional)"
     },
     "buttons": {
-      "submit": "Enviar Comanda",
+      "submit": "Enviar Reserva",
       "sending": "Enviant..."
     }
   },

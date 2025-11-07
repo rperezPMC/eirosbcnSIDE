@@ -1,7 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence, type PanInfo } from 'framer-motion'
+import {
+  motion,
+  AnimatePresence,
+  useReducedMotion,
+  type PanInfo,
+  type Transition
+} from 'framer-motion'
 
 interface Slide {
   id: number
@@ -19,11 +25,23 @@ const slides: Slide[] = [
   { id: 5, image: '/images/about/slider_about5.png', title: 'CARBON FIBER',      subtitle: 'Lightweight performance', alt: 'Carbon fiber' }
 ]
 
+// ---- Ajustes de animación suaves ----
+const SLIDE_SPRING = { type: 'spring', stiffness: 140, damping: 24, mass: 0.8 } as const
+const TEXT_TWEEN: Transition = {
+  duration: 0.45,
+  ease: [0.22, 0.61, 0.36, 1] as const // tupla BezierDefinition
+}
+
+// Swipe más natural
+const swipePower = (offset: number, velocity: number) => Math.abs(offset) * velocity
+const SWIPE_CONF = { delta: 60, velocity: 300, power: 800 } as const
+
 export default function AboutSlider() {
   const [currentIndex, setCurrentIndex] = useState(2)
-  const [direction, setDirection] = useState(0)
+  const [direction, setDirection] = useState(0) // -1 izquierda, 1 derecha
   const [isMobile, setIsMobile] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
+  const reduceMotion = useReducedMotion()
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768)
@@ -32,16 +50,22 @@ export default function AboutSlider() {
     return () => window.removeEventListener('resize', check)
   }, [])
 
+  // Auto-slide móvil suave
   useEffect(() => {
     if (!isMobile || slides.length <= 1 || isDragging) return
     const i = setInterval(() => {
       setDirection(1)
       setCurrentIndex(prev => (prev + 1) % slides.length)
-    }, 4000)
+    }, 4500)
     return () => clearInterval(i)
   }, [isMobile, isDragging])
 
-  const goToSlide = (index: number) => setCurrentIndex(index)
+  const goToSlide = (index: number) => {
+    const diff = index - currentIndex
+    setDirection(diff > 0 ? 1 : -1)
+    setCurrentIndex(index)
+  }
+
   const handlePrevious = () => {
     setDirection(-1)
     setCurrentIndex(prev => (prev - 1 + slides.length) % slides.length)
@@ -51,16 +75,14 @@ export default function AboutSlider() {
     setCurrentIndex(prev => (prev + 1) % slides.length)
   }
 
-  const SWIPE_DELTA = 60
-  const SWIPE_VELOCITY = 300
   const onDragStart = () => setIsDragging(true)
   const onDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const { offset, velocity } = info
-    const swipeScore = offset.x + velocity.x * 200
+    const power = swipePower(offset.x, velocity.x)
 
-    if (offset.x < -SWIPE_DELTA || velocity.x < -SWIPE_VELOCITY || swipeScore < -SWIPE_DELTA) {
+    if (offset.x < -SWIPE_CONF.delta || velocity.x < -SWIPE_CONF.velocity || (power > SWIPE_CONF.power && velocity.x < 0)) {
       handleNext()
-    } else if (offset.x > SWIPE_DELTA || velocity.x > SWIPE_VELOCITY || swipeScore > SWIPE_DELTA) {
+    } else if (offset.x > SWIPE_CONF.delta || velocity.x > SWIPE_CONF.velocity || (power > SWIPE_CONF.power && velocity.x > 0)) {
       handlePrevious()
     }
     setIsDragging(false)
@@ -102,6 +124,13 @@ export default function AboutSlider() {
 
   const visibleImages = getVisibleImages()
 
+  // Variants para entrada según dirección (suaviza el “swap”)
+  const centerVariants = {
+    enter: (dir: number) => ({ x: reduceMotion ? 0 : dir * 20, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (dir: number) => ({ x: reduceMotion ? 0 : -dir * 20, opacity: 0 })
+  }
+
   return (
     <div className="w-full bg-black py-20 overflow-hidden">
       <div className="relative flex items-center justify-center" style={{ height: isMobile ? FRAME_H : 600 }}>
@@ -115,12 +144,12 @@ export default function AboutSlider() {
                 drag="x"
                 dragConstraints={{ left: -120, right: 120 }}
                 dragSnapToOrigin
-                dragElastic={0.2}
+                dragElastic={0.22}
                 dragMomentum={false}
                 onDragStart={onDragStart}
                 onDragEnd={onDragEnd}
               >
-                <AnimatePresence initial={false} mode="popLayout">
+                <AnimatePresence initial={false} mode="popLayout" custom={direction}>
                   {visibleImages.map((img) => {
                     const isCenter = img.position === 'center'
                     const isLeft = img.position === 'left'
@@ -129,6 +158,8 @@ export default function AboutSlider() {
                       <motion.div
                         key={img.index}
                         className="absolute"
+                        layout
+                        layoutDependency={currentIndex}
                         initial={false}
                         animate={{
                           x: isLeft ? -OFFSET_X : isRight ? OFFSET_X : 0,
@@ -136,7 +167,7 @@ export default function AboutSlider() {
                           opacity: isCenter ? 1 : 0.6,
                           zIndex: isCenter ? 10 : 1
                         }}
-                        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                        transition={SLIDE_SPRING}
                       >
                         <div
                           className="rounded-[16px] overflow-hidden"
@@ -153,10 +184,12 @@ export default function AboutSlider() {
                         {/* Texto central */}
                         {isCenter && (
                           <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{ duration: 1 }}
+                            variants={centerVariants}
+                            initial="enter"
+                            animate="center"
+                            exit="exit"
+                            custom={direction}
+                            transition={TEXT_TWEEN}
                             className="absolute inset-0 flex flex-col items-center justify-center text-center text-white z-10"
                           >
                             <h2 className="font-bold text-[20px] leading-[24px] mb-1 drop-shadow-lg">{img.slide.title}</h2>
@@ -170,9 +203,7 @@ export default function AboutSlider() {
               </motion.div>
             </div>
           </div>
-
         ) : (
-          
           /* Versión desktop */
           <motion.div
             className="relative w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing"
@@ -180,7 +211,7 @@ export default function AboutSlider() {
             drag="x"
             dragConstraints={{ left: -120, right: 120 }}
             dragSnapToOrigin
-            dragElastic={0.15}
+            dragElastic={0.18}
             dragMomentum={false}
             onDragStart={onDragStart}
             onDragEnd={onDragEnd}
@@ -193,25 +224,29 @@ export default function AboutSlider() {
                 <motion.div
                   key={slide.id}
                   className="absolute"
+                  layout
+                  layoutDependency={currentIndex}
                   animate={{
                     x: `${position * 110}%`,
                     scale: 1,
                     opacity: 1,
                     zIndex: isCenter ? 20 : 10 - Math.abs(position)
                   }}
-                  transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+                  transition={SLIDE_SPRING}
                   onClick={() => !isCenter && goToSlide(index)}
                   style={{ cursor: isCenter ? 'default' : 'pointer' }}
                 >
                   <div className="relative w-[850px] h-[484px] rounded-[20px] overflow-hidden">
                     <img src={slide.image} alt={slide.alt} className="w-full h-full object-cover" data-preload="true"/>
-                    <AnimatePresence>
+                    <AnimatePresence mode="wait" custom={direction}>
                       {isCenter && (
                         <motion.div
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -20 }}
-                          transition={{ duration: 1 }}
+                          variants={centerVariants}
+                          initial="enter"
+                          animate="center"
+                          exit="exit"
+                          custom={direction}
+                          transition={TEXT_TWEEN}
                           className="absolute inset-0 flex flex-col items-center justify-center text-center text-white"
                         >
                           <h2 className="font-bold text-[32px] leading-[35px] mb-2">{slide.title}</h2>

@@ -123,9 +123,9 @@ export default function OrderModal({ isOpen, onClose, product }: OrderModalProps
                   <p className="text-white font-montserrat mb-2">{product.name}</p>
                   <div className="text-sm text-gray-400 space-y-1">
                     <p>{t('productDetails.color')}: {product.selectedColor}</p>
-                    <p>{t('productDetails.potency')}: {product.selectedSize}</p>
-                    <p>{t('productDetails.weight')}: {product.selectedWeight}</p>
-                    <p className="text-[#50a1b0] font-semibold text-lg mt-2">{product.price} €</p>
+                   {/* <p>{t('productDetails.potency')}: {product.selectedSize}</p> */}
+                   {/* <p>{t('productDetails.weight')}: {product.selectedWeight}</p> */}
+                   {/* <p className="text-[#50a1b0] font-semibold text-lg mt-2">{product.price} €</p> */}
                   </div>
                 </div>
 
