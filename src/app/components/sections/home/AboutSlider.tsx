@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence, type PanInfo } from 'framer-motion'
-import Image from 'next/image'
 
 interface Slide {
   id: number
@@ -26,7 +25,6 @@ export default function AboutSlider() {
   const [isMobile, setIsMobile] = useState(false)
   const [isDragging, setIsDragging] = useState(false)
 
-  // Detección de móvil
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768)
     check()
@@ -34,7 +32,6 @@ export default function AboutSlider() {
     return () => window.removeEventListener('resize', check)
   }, [])
 
-  // Auto-avanzar cada 4s en móvil (pausa al arrastrar)
   useEffect(() => {
     if (!isMobile || slides.length <= 1 || isDragging) return
     const i = setInterval(() => {
@@ -54,18 +51,17 @@ export default function AboutSlider() {
     setCurrentIndex(prev => (prev + 1) % slides.length)
   }
 
-  // Drag mejorado y simétrico
-  const SWIPE_DELTA = 60      // px arrastrados mínimos
-  const SWIPE_VELOCITY = 300  // px/s
+  const SWIPE_DELTA = 60
+  const SWIPE_VELOCITY = 300
   const onDragStart = () => setIsDragging(true)
   const onDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const { offset, velocity } = info
-    const swipeScore = offset.x + velocity.x * 200 // sensibilidad combinada
+    const swipeScore = offset.x + velocity.x * 200
 
     if (offset.x < -SWIPE_DELTA || velocity.x < -SWIPE_VELOCITY || swipeScore < -SWIPE_DELTA) {
-      handleNext()        // izquierda → siguiente
+      handleNext()
     } else if (offset.x > SWIPE_DELTA || velocity.x > SWIPE_VELOCITY || swipeScore > SWIPE_DELTA) {
-      handlePrevious()    // derecha → anterior
+      handlePrevious()
     }
     setIsDragging(false)
   }
@@ -117,7 +113,7 @@ export default function AboutSlider() {
                 className="relative w-full flex items-center justify-center cursor-grab active:cursor-grabbing"
                 style={{ height: INNER_H, touchAction: 'pan-x' }}
                 drag="x"
-                dragConstraints={{ left: -120, right: 120 }} // permite arrastre en ambos sentidos
+                dragConstraints={{ left: -120, right: 120 }}
                 dragSnapToOrigin
                 dragElastic={0.2}
                 dragMomentum={false}
@@ -143,21 +139,15 @@ export default function AboutSlider() {
                         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                       >
                         <div
-                          className="bg-white rounded-[16px] overflow-hidden"
+                          className="rounded-[16px] overflow-hidden"
                           style={{ width: isCenter ? CENTER_W : SIDE_W, height: isCenter ? CENTER_H : SIDE_H }}
                         >
-                          <Image
+                          <img
                             src={img.slide.image}
                             alt={img.slide.alt}
-                            width={isCenter ? CENTER_W : SIDE_W}
-                            height={isCenter ? CENTER_H : SIDE_H}
                             className="w-full h-full object-cover"
-                            style={{ 
-                              filter: 'brightness(0.6) contrast(1)',
-                            }}
+                            data-preload="true"
                           />
-                          {/* Capa adicional oscura para mejorar legibilidad del texto */}
-                          <div className="absolute inset-0 bg-black/20" />
                         </div>
 
                         {/* Texto central */}
@@ -180,7 +170,9 @@ export default function AboutSlider() {
               </motion.div>
             </div>
           </div>
+
         ) : (
+          
           /* Versión desktop */
           <motion.div
             className="relative w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing"
@@ -212,7 +204,7 @@ export default function AboutSlider() {
                   style={{ cursor: isCenter ? 'default' : 'pointer' }}
                 >
                   <div className="relative w-[850px] h-[484px] rounded-[20px] overflow-hidden">
-                    <img src={slide.image} alt={slide.alt} className="w-full h-full object-cover" />
+                    <img src={slide.image} alt={slide.alt} className="w-full h-full object-cover" data-preload="true"/>
                     <AnimatePresence>
                       {isCenter && (
                         <motion.div

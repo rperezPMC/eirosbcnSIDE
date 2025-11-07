@@ -21,7 +21,7 @@ export function ImageGrid() {
             rel="noopener noreferrer"
             className="w-8 h-8 flex items-center justify-center opacity-90 transition-all hover:opacity-100 hover:scale-110"
           >
-            <img src="/images/socials/insta.svg" alt="Instagram" className="w-8 h-8" />
+            <img src="/images/socials/insta.svg" alt="Instagram" className="w-8 h-8" data-preload="true"/>
           </a>
           <a
             href="https://www.tiktok.com/@eiros.official"
@@ -29,15 +29,15 @@ export function ImageGrid() {
             rel="noopener noreferrer"
             className="w-8 h-8 flex items-center justify-center opacity-90 transition-all hover:opacity-100 hover:scale-110"
           >
-            <img src="/images/socials/tik_tok.svg" alt="TikTok" className="w-8 h-8" />
+            <img src="/images/socials/tik_tok.svg" alt="TikTok" className="w-8 h-8" data-preload="true"/>
           </a>
           <a
-            href="https://www.facebook.com/eiros.dynamics/"
+            href="https://www.facebook.com/eirosbcn"
             target="_blank"
             rel="noopener noreferrer"
             className="w-8 h-8 flex items-center justify-center opacity-90 transition-all hover:opacity-100 hover:scale-110"
           >
-            <img src="/images/socials/facebook.svg" alt="Facebook" className="w-8 h-8" />
+            <img src="/images/socials/facebook.svg" alt="Facebook" className="w-8 h-8" data-preload="true"/>
           </a>
           <a
             href="https://x.com/EIROS_official"
@@ -45,7 +45,7 @@ export function ImageGrid() {
             rel="noopener noreferrer"
             className="w-8 h-8 flex items-center justify-center opacity-90 transition-all hover:opacity-100 hover:scale-110"
           >
-            <img src="/images/socials/x.svg" alt="X" className="w-8 h-8" />
+            <img src="/images/socials/x.svg" alt="X" className="w-8 h-8" data-preload="true"/>
           </a>
           <a
             href="https://www.linkedin.com/company/eiros"
@@ -53,15 +53,16 @@ export function ImageGrid() {
             rel="noopener noreferrer"
             className="w-8 h-8 flex items-center justify-center opacity-90 transition-all hover:opacity-100 hover:scale-110"
           >
-            <img src="/images/socials/linkedin.svg" alt="LinkedIn" className="w-8 h-8" />
+            <img src="/images/socials/linkedin.svg" alt="LinkedIn" className="w-8 h-8" data-preload="true"/>
           </a>
           <a
             href="https://www.youtube.com/@eiros.official"
             target="_blank"
             rel="noopener noreferrer"
             className="w-8 h-8 flex items-center justify-center opacity-90 transition-all hover:opacity-100 hover:scale-110"
+            data-preload="true"
           >
-            <img src="/images/socials/youtube.svg" alt="YouTube" className="w-8 h-8" />
+            <img src="/images/socials/youtube.svg" alt="YouTube" className="w-8 h-8" data-preload="true"/>
           </a>
           
         </div>
@@ -82,7 +83,7 @@ export function ImageGrid() {
               isHovered ? 'md:-translate-x-8 md:-translate-y-8' : ''
             }`}
           >
-            <img src="/images/grid/bici_1.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" />
+            <img src="/images/grid/bici_1.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" data-preload="true"/>
           </div>
 
           {/* 2 (TR en móvil, sin TR en desktop) */}
@@ -91,7 +92,7 @@ export function ImageGrid() {
               isHovered ? 'md:-translate-y-8' : ''
             }`}
           >
-            <img src="/images/grid/bici_2.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" />
+            <img src="/images/grid/bici_2.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" data-preload="true"/>
           </div>
 
           {/* 3 (TR en desktop) */}
@@ -100,7 +101,7 @@ export function ImageGrid() {
               isHovered ? 'md:translate-x-8 md:-translate-y-8' : ''
             }`}
           >
-            <img src="/images/grid/bici_3.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" />
+            <img src="/images/grid/bici_3.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" data-preload="true"/>
           </div>
 
           {/* 4 */}
@@ -109,7 +110,7 @@ export function ImageGrid() {
               isHovered ? 'md:-translate-x-8' : ''
             }`}
           >
-            <img src="/images/grid/bici_4.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" />
+            <img src="/images/grid/bici_4.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" data-preload="true"/>
           </div>
 
           {/* 5 (OCULTA en móvil) */}
@@ -118,7 +119,7 @@ export function ImageGrid() {
               isHovered ? 'md:scale-95' : ''
             }`}
           >
-            <img src="/images/grid/bici_5.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" />
+            <img src="/images/grid/bici_5.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" data-preload="true"/>
           </div>
 
           {/* 6 */}
@@ -127,7 +128,7 @@ export function ImageGrid() {
               isHovered ? 'md:translate-x-8' : ''
             }`}
           >
-            <img src="/images/grid/bici_6.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" />
+            <img src="/images/grid/bici_6.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" data-preload="true"/>
           </div>
 
           {/* 7 (BL en desktop) */}
@@ -136,7 +137,7 @@ export function ImageGrid() {
               isHovered ? 'md:-translate-x-8 md:translate-y-8' : ''
             }`}
           >
-            <img src="/images/grid/bici_7.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" />
+            <img src="/images/grid/bici_7.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" data-preload="true"/>
           </div>
 
           {/* 8 (BL en móvil, no en desktop) */}
@@ -145,7 +146,7 @@ export function ImageGrid() {
               isHovered ? 'md:translate-y-8' : ''
             }`}
           >
-            <img src="/images/grid/bici_8.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" />
+            <img src="/images/grid/bici_8.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" data-preload="true"/>
           </div>
 
           {/* 9 (BR en ambos modos; más grande en desktop) */}
@@ -154,7 +155,7 @@ export function ImageGrid() {
               isHovered ? 'md:translate-x-8 md:translate-y-8' : ''
             }`}
           >
-            <img src="/images/grid/bici_9.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" />
+            <img src="/images/grid/bici_9.jpg" alt="" className="w-full h-full object-cover opacity-[0.98]" data-preload="true"/>
           </div>
         </div>
 
@@ -190,7 +191,7 @@ export function ImageGrid() {
                   rel="noopener noreferrer"
                   className="w-12 h-12 flex items-center justify-center opacity-90 hover:opacity-100 hover:scale-120 transition-all duration-300 pointer-events-auto"
                 >
-                  <img src="/images/socials/insta.svg" alt="Instagram" className="w-10 h-10" />
+                  <img src="/images/socials/insta.svg" alt="Instagram" className="w-10 h-10" data-preload="true"/>
                 </a>
                 <a
                   href="https://www.tiktok.com/@eiros.official"
@@ -198,15 +199,15 @@ export function ImageGrid() {
                   rel="noopener noreferrer"
                   className="w-12 h-12 flex items-center justify-center opacity-90 hover:opacity-100 hover:scale-120 transition-all duration-300 pointer-events-auto"
                 >
-                  <img src="/images/socials/tik_tok.svg" alt="TikTok" className="w-10 h-10" />
+                  <img src="/images/socials/tik_tok.svg" alt="TikTok" className="w-10 h-10" data-preload="true"/>
                 </a>
                 <a
-                  href="https://www.facebook.com/eiros.dynamics/"
+                  href="https://www.facebook.com/eirosbcn"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 flex items-center justify-center opacity-90 hover:opacity-100 hover:scale-120 transition-all duration-300 pointer-events-auto"
                 >
-                  <img src="/images/socials/facebook.svg" alt="Facebook" className="w-10 h-10" />
+                  <img src="/images/socials/facebook.svg" alt="Facebook" className="w-10 h-10" data-preload="true"/>
                 </a>                
                 <a
                   href="https://x.com/EIROS_official"
@@ -214,7 +215,7 @@ export function ImageGrid() {
                   rel="noopener noreferrer"
                   className="w-12 h-12 flex items-center justify-center opacity-90 hover:opacity-100 hover:scale-120 transition-all duration-300 pointer-events-auto"
                 >
-                  <img src="/images/socials/x.svg" alt="X" className="w-10 h-10" />
+                  <img src="/images/socials/x.svg" alt="X" className="w-10 h-10" data-preload="true"/>
                 </a>
                 <a
                   href="https://www.linkedin.com/company/eiros"
@@ -222,7 +223,7 @@ export function ImageGrid() {
                   rel="noopener noreferrer"
                   className="w-12 h-12 flex items-center justify-center opacity-90 hover:opacity-100 hover:scale-120 transition-all duration-300 pointer-events-auto"
                 >
-                  <img src="/images/socials/linkedin.svg" alt="LinkedIn" className="w-10 h-10" />
+                  <img src="/images/socials/linkedin.svg" alt="LinkedIn" className="w-10 h-10" data-preload="true"/>
                 </a>
                 <a
                   href="https://www.youtube.com/@eiros.official"
@@ -230,7 +231,7 @@ export function ImageGrid() {
                   rel="noopener noreferrer"
                   className="w-12 h-12 flex items-center justify-center opacity-90 hover:opacity-100 hover:scale-120 transition-all duration-300 pointer-events-auto"
                 >
-                  <img src="/images/socials/youtube.svg" alt="YouTube" className="w-10 h-10" />
+                  <img src="/images/socials/youtube.svg" alt="YouTube" className="w-10 h-10" data-preload="true"/>
                 </a>
               </div>
 

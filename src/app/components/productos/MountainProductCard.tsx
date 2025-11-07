@@ -6,6 +6,18 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import ProductHistorySection from './ProductHistorySection'
 import OrderModal from './OrderModal'
+import React from 'react'
+
+function useIsIOSSafari() {
+  const [isIOS, setIsIOS] = React.useState(false)
+  React.useEffect(() => {
+    const ua = navigator.userAgent
+    const isiOS = /iP(ad|hone|od)/.test(ua)
+    const isWebKit = /WebKit/.test(ua) && !/CriOS|FxiOS/.test(ua) // excluye Chrome/Firefox iOS
+    setIsIOS(isiOS && isWebKit)
+  }, [])
+  return isIOS
+}
 
 export interface ProductVariant {
   id: string
@@ -66,6 +78,7 @@ export default function MountainProductCard({ product }: MountainProductCardProp
   const [galleryIndex, setGalleryIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
   const [showOrderModal, setShowOrderModal] = useState(false)
+  const isIOSSafari = useIsIOSSafari()
 
   useEffect(() => {
     const checkSize = () => setIsMobile(window.innerWidth < 768)
@@ -246,7 +259,7 @@ export default function MountainProductCard({ product }: MountainProductCardProp
                     alt="Previous"
                     width={24}
                     height={24}
-                    className="w-6 h-6"
+                    className={`w-6 h-6 ${isIOSSafari ? '[-webkit-transform:scaleX(-1)!important] [transform:scaleX(-1)!important]' : ''}`}
                   />
                 </button>
 
@@ -275,7 +288,7 @@ export default function MountainProductCard({ product }: MountainProductCardProp
                 {product.name}
               </h3>
 
-              {/* Opciones de peso */}
+              {/* Opciones de peso 
               <div className="flex gap-4">
                 <button
                   onClick={() => setSelectedWeight('main')}
@@ -298,7 +311,7 @@ export default function MountainProductCard({ product }: MountainProductCardProp
                     {selectedWeight === 'alternative' && <div className="w-10 h-0.5 bg-[#50a1b0] mt-1" />}
                   </button>
                 )}
-              </div>
+              </div>*/}
             </div>
 
             {/* Descripción */}
@@ -306,7 +319,7 @@ export default function MountainProductCard({ product }: MountainProductCardProp
               {product.description}
             </p>
 
-            {/* Tipos de Potència */}
+            {/* Tipos de Potència 
             <div className="flex flex-col gap-3">
               <h4
                 className="text-[14px] md:text-2xl text-[#50a1b0]"
@@ -337,7 +350,7 @@ export default function MountainProductCard({ product }: MountainProductCardProp
                   </motion.button>
                 ))}
               </div>
-            </div>
+            </div>*/}
 
             {/* Botón comprar + Precio + Stock */}
             <div className="flex items-center gap-4 md:gap-6 mt-4 flex-wrap">
@@ -350,10 +363,11 @@ export default function MountainProductCard({ product }: MountainProductCardProp
               >
                 <img src="/images/logos/logo_small_azul.svg" alt="Logo" className='h-6 w-6'/>
                 <span className="text-[16px] md:text-[24px] pl-2 font-semibold text-white" style={{ fontFamily: 'Poppins' }}>
-                  RESERVAR
+                  {t('buy')}
                 </span>
               </motion.button>
 
+              {/*
               <div className="relative flex items-center">
                 {product.inStock && (
                   <span className="absolute top-2.5 -right-4 w-2 h-2 rounded-full bg-luxury-green" />
@@ -364,12 +378,13 @@ export default function MountainProductCard({ product }: MountainProductCardProp
                 >
                   {product.price} €
                 </span>
-              </div>
+              </div>*/}
+
             </div>
           </div>
         </div>
 
-        {/* Especificaciones técnicas */}
+        {/* Especificaciones técnicas 
         <div className="mt-16 md:mt-20 pt-8 border-t border-gray-800 px-4 md:px-0">
           <h4 className="text-sm md:text-base text-white mb-6 uppercase" style={{ fontFamily: 'Montserrat' }}>
             ESPECIFICACIONS TÈCNICAS:
@@ -387,7 +402,7 @@ export default function MountainProductCard({ product }: MountainProductCardProp
               <p className="mt-2">Autoclave Forged: For maximum strength-to-weight and resin perfection.</p>
             </div>
           </div>
-        </div>
+        </div>*/}
       </div>
 
       {/* Sección de historia */}

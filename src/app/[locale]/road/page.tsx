@@ -25,8 +25,8 @@ export default function RoadPage() {
       <section id='mountain-hero-section-video' className="w-full flex justify-center bg-black mt-16 px-4 md:mt-20">
         <div className="w-[92%] md:w-[85%] overflow-hidden rounded-xl">
           <div className="aspect-[4/5] md:aspect-[5/2]">
-            <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
-              <source src="/videos/road/heroSection_road.mp4" type="video/mp4" />
+            <video className="w-full h-full object-cover" data-preload="true" autoPlay muted loop playsInline poster='/videos/poster.png'>
+              <source src="/videos/road/heroSection_road.mp4#t=0.001" type="video/mp4" />
             </video>
           </div>
         </div>
@@ -44,7 +44,7 @@ export default function RoadPage() {
       </section>
 
       <section className="w-full bg-luxury-black flex items-center justify-center py-0 -mt-3">
-        <div className="w-[800px] h-[190px] md:h-[426px] rounded-[16px] overflow-hidden">
+        <div className="w-[320px] h-[190px] md:w-[800px] md:h-[426px] rounded-[16px] overflow-hidden">
           <img
             src={
               isMobile

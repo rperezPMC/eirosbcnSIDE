@@ -152,6 +152,7 @@ function CarouselBox({ slider }: CarouselBoxProps) {
                       alt={`${slider.name} ${i + 1}`}
                       className="w-full h-full object-cover"
                       draggable={false}
+                      data-preload="true"
                     />
                   </div>
                 </motion.div>
@@ -203,7 +204,7 @@ function ProductButton({ name }: { name: string }) {
       className="flex items-center gap-2 px-3 py-1 rounded-[24px] border border-[#93c5f2] bg-transparent md:gap-3 md:px-8 md:py-3 md:rounded-[30px] md:border-[1.5px]"
     >
       <div className="w-5 h-5 md:w-7 md:h-7">
-        <img src="/images/logos/logo_small_azul.svg" alt="Eiros Logo" className="w-full h-full object-contain" />
+        <img src="/images/logos/logo_small_azul.svg" alt="Eiros Logo" className="w-full h-full object-contain" data-preload="true"/>
       </div>
       <span className="text-[#f9f9f9] text-1xl md:text-2xl lg:text-[28px] font-semibold whitespace-nowrap" style={{ fontFamily: 'Poppins' }}>
         {name}

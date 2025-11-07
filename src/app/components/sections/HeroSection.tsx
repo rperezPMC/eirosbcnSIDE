@@ -59,9 +59,10 @@ export default function HeroSection() {
                 muted
                 loop
                 playsInline
-                preload="auto"
+                data-preload="true"
+                poster='/videos/poster.png'
               >
-                <source src="/videos/home/HeroSection_mobile.mp4" type="video/mp4" />
+                <source src="/videos/home/HeroSection_mobile.mp4#t=0.001" type="video/mp4" />
               </video>
             </div>
 
@@ -73,9 +74,9 @@ export default function HeroSection() {
                 muted
                 loop
                 playsInline
-                preload="auto"
+                data-preload="true"
               >
-                <source src="/videos/home/HeroSection_desktop.mp4" type="video/mp4" />
+                <source src="/videos/home/HeroSection_desktop.mp4#t=0.001" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -89,6 +90,7 @@ export default function HeroSection() {
               src="/images/home/logo_eiros.svg"
               alt="Eiros Logo"
               className="h-20 md:h-30 w-auto object-contain"
+              data-preload="true"
             />
           </div>
 
@@ -154,6 +156,7 @@ export default function HeroSection() {
               src="/images/home/manillar_forged_gods_blue_hover.png"
               alt="Manillar ATENA"
               className="w-[85%] h-auto object-contain"
+              data-preload="true"
             />
           </div>
 
@@ -199,6 +202,7 @@ export default function HeroSection() {
                 src="/images/home/manillar_forged_gods_blue_hover.png"
                 alt="Manillar ATENA"
                 className="w-full h-auto object-contain"
+                data-preload="true"
               />
             </div>
 
@@ -314,15 +318,16 @@ export default function HeroSection() {
                   md:object-cover
                   rounded-[12px] md:rounded-[20px]
                 "
+                data-preload="true"
                 style={{
-                  maxHeight: '120vh', // 🔹 hace el video más alto en mobile
+                  maxHeight: '120vh',
                 }}
               >
                 <source
                   src={
                     isMobile
-                      ? '/videos/home/video_mountain_cta_mobile.mp4'
-                      : '/videos/home/video_mountain_cta.mp4'
+                      ? '/videos/home/video_mountain_cta_mobile.mp4#t=0.001'
+                      : '/videos/home/video_mountain_cta.mp4#t=0.001'
                   }
                   type="video/mp4"
                 />

@@ -10,14 +10,13 @@ interface ProductHistorySectionProps {
   images: string[]
 }
 
-export default function ProductHistorySection({
-  productName,
-  historyDescription,
-  images
-}: ProductHistorySectionProps) {
+export default function ProductHistorySection({ productName, historyDescription, images }: ProductHistorySectionProps) {
+
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
+
+  const isTinyScreen = typeof window !== 'undefined' && window.innerWidth <= 360
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768)
@@ -81,10 +80,9 @@ export default function ProductHistorySection({
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] pt-20 gap-10 md:gap-12 items-center">
 
           {/* Slider con estilos de HeroPhotoSlider */}
-          <div className="order-1 md:order-2 relative">
-            {/* Contenedor estilo HeroPhotoSlider - fondo negro con borde */}
-            <div className="relative w-[380px] lg:w-[400px] rounded-[20px] overflow-hidden p-4 bg-black border-2 border-[#50a1b0] mx-auto">
-              <div className="relative w-full h-[360px] lg:h-[400px] overflow-hidden rounded-[16px]">
+          <div className="order-1 md:order-2 relative flex items-center justify-center">
+            <div className="relative w-[340px] lg:w-[400px] rounded-[20px] overflow-hidden p-1 bg-black border-2 border-[#50a1b0] mx-auto">
+              <div className="relative w-full h-[330px] lg:h-[400px] overflow-hidden rounded-[16px]">
                 <motion.div
                   className="relative w-full flex items-center justify-center cursor-grab active:cursor-grabbing"
                   style={{ height: '100%' }}
@@ -117,14 +115,18 @@ export default function ProductHistorySection({
                           }}
                           style={{ cursor: isCenter ? 'default' : 'pointer' }}
                         >
-                          <div
-                            className="relative z-20 bg-white rounded-[16px] overflow-hidden"
-                            style={{
-                              width: isCenter ? CENTER_W : SIDE_W,
-                              height: isCenter ? CENTER_H : SIDE_H,
-                              boxShadow: '0 0 0 1px rgba(147,197,242,0.12) inset'
-                            }}
-                          >
+                            <div
+                              className="relative z-20 bg-white rounded-[16px] overflow-hidden"
+                              style={{
+                                width: isCenter
+                                  ? isTinyScreen ? CENTER_W * 0.9 : CENTER_W
+                                  : isTinyScreen ? SIDE_W * 0.4 : SIDE_W,
+                                height: isCenter
+                                  ? isTinyScreen ? CENTER_H * 0.9 : CENTER_H
+                                  : isTinyScreen ? SIDE_H * 0.75 : SIDE_H,
+                                boxShadow: '0 0 0 1px rgba(147,197,242,0.12) inset',
+                              }}
+                            >
                             <Image
                               src={img.src}
                               alt={`${productName} history ${img.index + 1}`}

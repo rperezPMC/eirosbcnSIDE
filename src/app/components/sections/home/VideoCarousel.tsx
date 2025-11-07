@@ -11,10 +11,10 @@ interface VideoSlide {
 }
 
 const slides: VideoSlide[] = [
-  { id: 1, videoSrc: '/videos/home/carousel/vacum.mp4',          title: 'VACUUM PACKED',         subtitle: 'Air removed and sealed' },
-  { id: 2, videoSrc: '/videos/home/carousel/vacum_chamber.mp4',  title: 'AUTOCLAVES COMPOSITES', subtitle: 'Ensuring maximum performance' },
-  { id: 3, videoSrc: '/videos/home/carousel/lightweight.mp4',   title: 'PERFECTION',            subtitle: 'In all the details' },
-  { id: 4, videoSrc: '/videos/home/carousel/perfection.mp4',   title: 'QUALITY CONTROL',       subtitle: 'Every piece inspected' }
+  { id: 1, videoSrc: '/videos/home/carousel/vacum.mp4#t=0.001',          title: 'VACUUM PACKED',         subtitle: 'Air removed and sealed' },
+  { id: 2, videoSrc: '/videos/home/carousel/vacum_chamber.mp4#t=0.001',  title: 'AUTOCLAVES COMPOSITES', subtitle: 'Ensuring maximum performance' },
+  { id: 3, videoSrc: '/videos/home/carousel/lightweight.mp4#t=0.001',   title: 'PERFECTION',            subtitle: 'In all the details' },
+  { id: 4, videoSrc: '/videos/home/carousel/perfection.mp4#t=0.001',   title: 'QUALITY CONTROL',       subtitle: 'Every piece inspected' }
 ]
 
 export default function VideoCarousel() {
@@ -141,6 +141,7 @@ export default function VideoCarousel() {
                   loop={!isCenter}
                   className="absolute inset-0 w-full h-full object-cover"
                   onEnded={isCenter ? handleVideoEnd : undefined}
+                  data-preload="true"
                 >
                   <source src={slide.videoSrc} type="video/mp4" />
                 </video>

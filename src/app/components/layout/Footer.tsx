@@ -80,7 +80,7 @@ export function Footer() {
                       <img src="/images/socials/tik_tok.svg" alt="Tik Tok" className="w-[30px] h-[30px]" />
                     </a>
                     <a 
-                      href="https://www.facebook.com/eiros.dynamics/" 
+                      href="https://www.facebook.com/eirosbcn" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="w-[30px] h-[30px] flex items-center justify-center hover:opacity-100 transition-opacity"
@@ -242,7 +242,7 @@ export function Footer() {
                     <img src="/images/socials/tik_tok.svg" alt="Tik Tok" className="w-9 h-9" />
                   </a>
                   <a 
-                    href="https://www.facebook.com/eiros.dynamics/" 
+                    href="https://www.facebook.com/eirosbcn" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-10 h-10 flex items-center justify-center opacity-90 hover:opacity-100 transition-opacity"

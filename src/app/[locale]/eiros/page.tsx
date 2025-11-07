@@ -32,8 +32,9 @@ export default function EirosPage() {
               loop
               playsInline
               preload="auto"
+              data-preload="true"
             >
-              <source src="/videos/about/heroSection_about_mobile.mp4" type="video/mp4" />
+              <source src="/videos/about/heroSection_about_mobile.mp4#t=0.001" type="video/mp4" />
             </video>
           </div>
 
@@ -46,8 +47,9 @@ export default function EirosPage() {
               loop
               playsInline
               preload="auto"
+              data-preload="true"
             >
-              <source src="/videos/about/heroSection_about.mp4" type="video/mp4" />
+              <source src="/videos/about/heroSection_about.mp4#t=0.001" type="video/mp4" />
             </video>
           </div>
         </div>
@@ -80,7 +82,7 @@ export default function EirosPage() {
       >
         <div
           className={`w-[85%] rounded-[20px] overflow-hidden relative ${
-            isMobile ? 'aspect-[9/16]' : ''  // Cambiado a aspect ratio vertical estándar para móviles
+            isMobile ? 'aspect-[9/16]' : ''
           }`}
           style={!isMobile ? { aspectRatio: '17/6' } : undefined}
         >
@@ -89,8 +91,8 @@ export default function EirosPage() {
             <img
               src="/images/about/inspired_about_mobile.png"
               alt="Inspired About Mobile"
-              className="w-full h-full object-contain"  // Cambiado de object-cover a object-contain
-              // Removido absolute y posicionamiento ya que no es necesario con una sola imagen
+              className="w-full h-full object-cover"
+              data-preload="true"
             />
           ) : (
             <>
@@ -98,18 +100,28 @@ export default function EirosPage() {
               <img
                 src="/images/about/inspired_about.png"
                 alt="Inspired About"
-                className={`w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 ${
+                className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
                   isHovered ? 'opacity-0' : 'opacity-100'
                 }`}
+                style={{
+                  WebkitTransform: 'translateZ(0)',
+                  WebkitBackfaceVisibility: 'hidden'
+                }}
+                data-preload="true"
               />
 
               {/* Imagen al hacer hover */}
               <img
                 src="/images/about/inspired2_about.png"
                 alt="Inspired About Hover"
-                className={`w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-1000 ${
+                className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
                   isHovered ? 'opacity-100' : 'opacity-0'
                 }`}
+                style={{
+                  WebkitTransform: 'translateZ(0)',
+                  WebkitBackfaceVisibility: 'hidden'
+                }}
+                data-preload="true"
               />
             </>
           )}

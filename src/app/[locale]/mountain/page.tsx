@@ -18,8 +18,8 @@ export default async function MountainPage({
       <section id='mountain-hero-section-video' className="w-full flex justify-center bg-black mt-16 px-4 md:mt-20">
         <div className="w-[92%] md:w-[85%] overflow-hidden rounded-xl">
           <div className="aspect-[4/5] md:aspect-[5/2]">
-            <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
-              <source src="/videos/mountain/heroSection_mountain.mp4" type="video/mp4" />
+            <video className="w-full h-full object-cover" autoPlay muted loop playsInline data-preload="true" poster='/videos/poster.png' >
+              <source src="/videos/mountain/heroSection_mountain.mp4#t=0.001" type="video/mp4" />
             </video>
           </div>
         </div>
@@ -38,6 +38,7 @@ export default async function MountainPage({
             alt="Gravel menu"
             className="w-full h-full object-contain bg-black"
             style={{ clipPath: 'inset(60px 0 40px 0)' }}
+            data-preload="true"
           />
         </div>
       </section>
