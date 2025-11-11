@@ -77,6 +77,37 @@ export default function LoaderGate({ children }: { children: React.ReactNode }) 
   const minDelay = 350
   const videoRef = useRef<HTMLVideoElement>(null)
 
+  // Bloquear scroll del body mientras se muestra el loader
+  useEffect(() => {
+    if (show) {
+      // Bloquear scroll en body
+      document.body.style.overflow = 'hidden'
+      document.body.style.position = 'fixed'
+      document.body.style.width = '100%'
+      document.body.style.height = '100%'
+      
+      // Prevenir touchmove en iOS
+      const preventScroll = (e: TouchEvent) => {
+        e.preventDefault()
+      }
+      
+      document.addEventListener('touchmove', preventScroll, { passive: false })
+      
+      return () => {
+        document.body.style.overflow = ''
+        document.body.style.position = ''
+        document.body.style.width = ''
+        document.body.style.height = ''
+        document.removeEventListener('touchmove', preventScroll)
+      }
+    } else {
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+      document.body.style.height = ''
+    }
+  }, [show])
+
   const run = useMemo(() => {
     return async () => {
       setShow(true)
@@ -109,7 +140,7 @@ export default function LoaderGate({ children }: { children: React.ReactNode }) 
   return (
     <>
       {show && (
-        <div className="fixed inset-0 z-[1000] bg-black">
+        <div className="fixed inset-0 z-[1000] bg-black" style={{ minHeight: '100dvh', touchAction: 'none' }}>
           <div className="w-full h-full relative flex items-center justify-center">
             
             {/* Video de fondo */}

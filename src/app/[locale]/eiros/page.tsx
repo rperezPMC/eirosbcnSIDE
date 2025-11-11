@@ -84,7 +84,7 @@ export default function EirosPage() {
         onMouseLeave={() => !isMobile && setIsHovered(false)}
       >
         <div
-          className={`w-[95%] md:w-[85%] rounded-[20px] overflow-hidden relative ${
+          className={`w-[85%] md:w-[85%] rounded-[20px] overflow-hidden relative ${
             isMobile ? 'h-[100dvh] max-h-[90vh]' : ''
           }`}
           style={!isMobile ? { aspectRatio: '17/6' } : undefined}
