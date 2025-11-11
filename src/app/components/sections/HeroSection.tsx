@@ -305,7 +305,16 @@ export default function HeroSection() {
 
           <div className="w-full px-3 md:px-6 flex flex-col items-center justify-center gap-6 md:gap-10 rounded-[20px]">        
             {/* Video */}
-            <motion.div className=" w-full max-w-[860px] rounded-[12px] md:rounded-[20px] overflow-hidden md:aspect-video">
+            <motion.div
+              className="
+                w-full 
+                max-w-[860px] 
+                rounded-[12px] 
+                md:rounded-[20px] 
+                overflow-hidden 
+                md:aspect-video
+              "
+            >
               <video
                 autoPlay
                 loop
@@ -314,25 +323,23 @@ export default function HeroSection() {
                 className="
                   w-full 
                   h-auto 
-                  md:h-full 
-                  md:object-cover
+                  object-cover md:object-contain 
+                  aspect-[9/16] md:aspect-video
                   rounded-[12px] md:rounded-[20px]
                 "
                 data-preload="true"
-                style={{
-                  maxHeight: '120vh',
-                }}
               >
                 <source
                   src={
                     isMobile
-                      ? '/videos/home/video_mountain_cta_mobile.mp4#t=0.001'
-                      : '/videos/home/video_mountain_cta.mp4#t=0.001'
+                      ? '/videos/home/video_mountain_cta.mp4'
+                      : '/videos/home/video_mountain_cta_mobile.mp4'
                   }
                   type="video/mp4"
                 />
               </video>
             </motion.div>
+
 
             {/* Texto */}
             <motion.div 

@@ -73,30 +73,36 @@ export default function EirosPage() {
         </div>
       </section>
 
-      {/* HOVER SECTION SOBRE NOSOTROS*/}
+     {/* HOVER SECTION SOBRE NOSOTROS */}
       <section
         id="hover-section-about"
-        className="w-full h-full flex justify-center bg-black mt-4 md:mt-4 mb-4"
+        className={`
+          w-full flex justify-center bg-black 
+          ${isMobile ? '-mt-5 -mb-5' : 'mt-4 mb-4'} 
+        `}
         onMouseEnter={() => !isMobile && setIsHovered(true)}
         onMouseLeave={() => !isMobile && setIsHovered(false)}
       >
         <div
-          className={`w-[85%] rounded-[20px] overflow-hidden relative ${
-            isMobile ? 'aspect-[9/16]' : ''
+          className={`w-[95%] md:w-[85%] rounded-[20px] overflow-hidden relative ${
+            isMobile ? 'h-[100dvh] max-h-[90vh]' : ''
           }`}
           style={!isMobile ? { aspectRatio: '17/6' } : undefined}
         >
-          {/* Versión móvil */}
           {isMobile ? (
-            <img
-              src="/images/about/inspired_about_mobile.png"
-              alt="Inspired About Mobile"
-              className="w-full h-full object-cover"
-              data-preload="true"
-            />
+            <div className="relative w-full h-full bg-black">
+              <img
+                src="/images/about/inspired_about_mobile.png"
+                alt="Inspired About Mobile"
+                className="absolute inset-0 w-full h-full object-contain object-center"
+                style={{
+                  WebkitTransform: 'translateZ(0)',
+                  WebkitBackfaceVisibility: 'hidden'
+                }}
+              />
+            </div>
           ) : (
             <>
-              {/* Imagen por defecto */}
               <img
                 src="/images/about/inspired_about.png"
                 alt="Inspired About"
@@ -107,10 +113,7 @@ export default function EirosPage() {
                   WebkitTransform: 'translateZ(0)',
                   WebkitBackfaceVisibility: 'hidden'
                 }}
-                data-preload="true"
               />
-
-              {/* Imagen al hacer hover */}
               <img
                 src="/images/about/inspired2_about.png"
                 alt="Inspired About Hover"
@@ -121,7 +124,6 @@ export default function EirosPage() {
                   WebkitTransform: 'translateZ(0)',
                   WebkitBackfaceVisibility: 'hidden'
                 }}
-                data-preload="true"
               />
             </>
           )}
