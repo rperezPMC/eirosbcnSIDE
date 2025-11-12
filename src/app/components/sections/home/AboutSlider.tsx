@@ -18,7 +18,7 @@ interface Slide {
 }
 
 const slides: Slide[] = [
-  { id: 1, image: '/images/about/slider_about.png',  title: 'MADE IN BARCELONA', subtitle: 'Mediterranean style', alt: 'Made in Barcelona' },
+  { id: 1, image: '/images/about/slider_about.jpg',  title: 'MADE IN BARCELONA', subtitle: 'Mediterranean style', alt: 'Made in Barcelona' },
   { id: 2, image: '/images/about/slider_about2.png', title: 'NATURE INSPIRED',   subtitle: 'Pieces make sense',  alt: 'Nature inspired' },
   { id: 3, image: '/images/about/slider_about3.png', title: 'TEXTURES',          subtitle: 'Are out there',      alt: 'Textures' },
   { id: 4, image: '/images/about/slider_about4.png', title: 'BACK TO THE ROOTS', subtitle: 'Modern classic',      alt: 'Back to the roots' },
