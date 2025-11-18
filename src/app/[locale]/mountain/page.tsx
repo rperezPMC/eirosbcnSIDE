@@ -1,5 +1,5 @@
 import { MountainProductCardWithData } from '@/app/components/productos/MountainProductCardWithModal'
-import { obtenerProductosMountainFromJson } from '@/lib/services/mountainProductService.json'
+import { obtenerProductosMountain } from '@/lib/services/filemakerProductService'
 import { MountainOrganigrama } from '@/app/components/productos/MountainOrganigram'
 
 export default async function MountainPage({
@@ -7,9 +7,9 @@ export default async function MountainPage({
 }: {
   params: Promise<{ locale: string }>
 }) {
-  const { locale } = await params   // 👈 se debe await porque es Promise
+  const { locale } = await params
 
-  const productos = await obtenerProductosMountainFromJson(locale)
+  const productos = await obtenerProductosMountain(locale)
 
   return (
     <div className="w-full bg-luxury-black">

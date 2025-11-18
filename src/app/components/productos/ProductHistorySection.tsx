@@ -66,7 +66,9 @@ export default function ProductHistorySection({ productName, historyDescription,
   }
   
   const visibleImages = getVisibleImages()
-  if (!historyDescription || images.length === 0) return null
+  if (!historyDescription) return null
+  
+  const hasImages = images.length > 0
 
   const CENTER_W = isMobile ? 240 : 270
   const CENTER_H = isMobile ? 320 : 380
@@ -77,9 +79,10 @@ export default function ProductHistorySection({ productName, historyDescription,
   return (
     <div className="w-full bg-black py-12 md:py-20 pl-4 pr-4">
       <div className="max-w-[1600px] mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] pt-20 gap-10 md:gap-12 items-center">
+        <div className={`grid grid-cols-1 ${hasImages ? 'md:grid-cols-[1fr_auto]' : ''} pt-20 gap-10 md:gap-12 items-center`}>
 
           {/* Slider con estilos de HeroPhotoSlider */}
+          {hasImages && (
           <div className="order-1 md:order-2 relative flex items-center justify-center">
             <div className="relative w-[340px] lg:w-[400px] rounded-[20px] overflow-hidden p-1 bg-black border-2 border-[#50a1b0] mx-auto">
               <div className="relative w-full h-[330px] lg:h-[400px] overflow-hidden rounded-[16px]">
@@ -144,18 +147,19 @@ export default function ProductHistorySection({ productName, historyDescription,
               </div>
             </div>
           </div>
+          )}
 
           {/* Texto original mantenido */}
-          <div className="order-2 md:order-1 flex flex-col gap-4 md:gap-0 justify-center mt-20 md:px-8 md:text-right md:pr-12">
+          <div className={`${hasImages ? 'order-2 md:order-1' : ''} flex flex-col gap-4 md:gap-0 justify-center mt-20 md:px-8 ${hasImages ? 'md:text-right md:pr-12' : 'text-center'}`}>
             <h2
-              className="text-[30px] leading-[38px] md:text-[32px] md:leading-[40px] font-bold text-white text-center md:text-right md:mb-4 md:mt-4 md:mt-10 px-4 md:px-0 md:pr-2"
+              className={`text-[30px] leading-[38px] md:text-[32px] md:leading-[40px] font-bold text-white ${hasImages ? 'text-center md:text-right' : 'text-center'} md:mb-4 md:mt-4 md:mt-10 px-4 md:px-0 md:pr-2`}
               style={{ fontFamily: 'Poppins' }}
             >
               THE STORY OF {productName.toUpperCase()}
             </h2>
 
             <p
-              className="text-[14px] md:text-[16px] text-[#f9f9f9] leading-[22px] md:leading-[26px] md:ml-10 text-justify md:text-right"
+              className={`text-[14px] md:text-[16px] text-[#f9f9f9] leading-[22px] md:leading-[26px] ${hasImages ? 'md:ml-10 text-justify md:text-right' : 'text-center'}`}
               style={{ fontFamily: 'Montserrat' }}
             >
               {historyDescription}

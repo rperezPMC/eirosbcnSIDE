@@ -33,6 +33,21 @@ export function MountainProductCardWithData({ product }: MountainProductCardWith
   const pesoPrincipal = product.pesos.find(p => p.esPrincipal) || product.pesos[0]
   const pesoAlternativo = product.pesos.find(p => !p.esPrincipal)
 
+  // DEBUG: Ver datos recibidos de FileMaker
+  console.log('[MountainProductCardWithModal] Producto:', product.nombre)
+  console.log('[MountainProductCardWithModal] Variantes:', product.variantes.map(v => ({
+    id: v.id,
+    colorId: v.colorId,
+    colorIdTipo: typeof v.colorId,
+    colorInfo: v.colorInfo?.nombre
+  })))
+  console.log('[MountainProductCardWithModal] Imágenes:', imagenesValidas.map(img => ({
+    tipo: img.tipoImagen,
+    colorId: img.colorId,
+    colorIdTipo: typeof img.colorId,
+    ruta: img.rutaArchivo
+  })))
+
   // Transformar datos de BD al formato del componente
   const cardProduct = {
     id: product.id.toString(),
@@ -58,12 +73,25 @@ export function MountainProductCardWithData({ product }: MountainProductCardWith
       
       // Buscar imágenes de galería para este color
       const galeriaColor = imagenesValidas
-        .filter(img => img.colorId === v.colorId && img.tipoImagen === 'galeria')
+        .filter(img => {
+          const match = img.colorId === v.colorId && img.tipoImagen === 'galeria'
+          // DEBUG: Ver comparación detallada
+          if (img.tipoImagen === 'galeria') {
+            console.log(`  [Filtro Galería] Imagen ColorId: ${img.colorId} (${typeof img.colorId}) vs Variante ColorId: ${v.colorId} (${typeof v.colorId}) = ${match}`)
+          }
+          return match
+        })
         .sort((a, b) => a.orden - b.orden)
         .map(img => normalizarRuta(img.rutaArchivo))
       
+      // DEBUG: Ver imágenes por variante
+      console.log(`[Variante] Color: ${v.colorInfo?.nombre || v.color}, ColorId: ${v.colorId}`)
+      console.log('  - Imagen principal:', imagenColor?.rutaArchivo || 'NO ENCONTRADA')
+      console.log('  - Galería:', galeriaColor.length, 'imágenes')
+      console.log('  - Rutas galería:', galeriaColor)
+      
       return {
-        id: v.id.toString(),
+        id: v.colorId ? String(v.colorId) : String(v.id),  // Usar ColorId como fallback
         color: v.codigoHex,
         colorId: v.colorId,
         colorLogo: v.colorInfo?.rutaLogo || null,

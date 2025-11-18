@@ -95,6 +95,13 @@ export default function MountainProductCard({ product }: MountainProductCardProp
   const handleVariantChange = (variantId: string) => {
     setSelectedVariant(variantId)
     setGalleryIndex(0)
+    
+    // DEBUG: Ver cambio de variante
+    const variantData = product.variants.find(v => v.id === variantId)
+    console.log('[MountainProductCard] Cambio a variante:', variantId)
+    console.log('  - Color:', variantData?.colorName)
+    console.log('  - Imagen principal:', variantData?.imagenPrincipal)
+    console.log('  - Galería:', variantData?.galeriaImagenes.length, 'imágenes')
   }
   
   const handlePreviousGallery = () => {
@@ -410,7 +417,7 @@ export default function MountainProductCard({ product }: MountainProductCardProp
       </div>
 
       {/* Sección de historia */}
-      {product.historyDescription && product.historyImages.length > 0 && (
+      {product.historyDescription && (
         <ProductHistorySection
           productName={product.name}
           historyDescription={product.historyDescription}
